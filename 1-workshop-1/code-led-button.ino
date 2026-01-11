@@ -13,8 +13,8 @@ void setup() {
   Serial.begin(9600);
   
   // Configure pins
-  pinMode(LED_PIN, OUTPUT);     // LED is something we control
-  pinMode(BUTTON_PIN, INPUT);   // Button is something we read
+  pinMode(LED_PIN, OUTPUT);           // LED is something we control (output)
+  pinMode(BUTTON_PIN, INPUT_PULLDOWN); // Button is something we read (input with internal pull-down resistor)
   
   // Print welcome message
   Serial.println("=== LED + Button Circuit ===");

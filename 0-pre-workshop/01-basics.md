@@ -54,10 +54,10 @@ LED Symbol:
 
 Real LED:
 ```
-  ┌──── Long leg (+) = Positive (anode)
+  ┌──────   Long leg (+) = Positive (anode)
 ╭─│
 ╰─│
-  └─    Short leg (-) = Negative (cathode)
+  └────     Short leg (-) = Negative (cathode)
 ─────          
 Flat side = negative (-), this edge connects to GND
 ```
@@ -104,7 +104,7 @@ Resistor limits current to a safe level (~20mA for LEDs). Without it, too much c
 ```
 Typical 400-pin breadboard layout:
 
-    + -   A B C D E   |  F G H I J  + -
+    + -    A B C D E   |   F G H I J   + -
   1 ⭕⭕  ⭕⭕⭕⭕⭕  |  ⭕⭕⭕⭕⭕ ⭕⭕
   2 ⭕⭕  ⭕⭕⭕⭕⭕  |  ⭕⭕⭕⭕⭕ ⭕⭕
   3 ⭕⭕  ⭕⭕⭕⭕⭕  |  ⭕⭕⭕⭕⭕ ⭕⭕
@@ -143,5 +143,5 @@ You now understand:
 - ✅ How buttons and breadboards work
 - ✅ What microcontroller pins do
 
-**Next →** [Arduino IDE Setup](/pre-workshop/02-arduino-setup.md)
+**Next →** [Arduino IDE Setup](/0-pre-workshop/02-arduino-setup.md)
 

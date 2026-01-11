@@ -11,14 +11,16 @@ This homework has two goals:
 1. **Sensor Basics** (15 min read)
    - How DHT11 reads temperature/humidity
    - How light sensors work
+   - Understanding sensor data
 
-2. **Code Tweaking** (15 min hands-on)
-   - Read sensor values in Arduino
-   - See live data
+2. **Code Tweaking & Experiments** (15 min hands-on)
+   - Modify sensor code
+   - Add new features
+   - Practice debugging
 
 3. **Project Picker** (5 min decision)
    - Choose ONE of 4 projects
-   - Fill out a quick form
+   - Understand what you'll build
 
 ## The 4 Project Options
 
@@ -40,5 +42,5 @@ Difficulty: ⭐⭐⭐
 
 ---
 
-**Start here:** [Sensor Basics](/inter-workshop/01-sensor-basics.md)
+**Start here:** [Sensor Basics](/2-inter-workshop/01-sensor-basics.md)
 

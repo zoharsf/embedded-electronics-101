@@ -1,20 +1,23 @@
-# ✅ Pre-Workshop Homework Checklist (30-45 min)
+# ✅ Pre-Workshop Homework Checklist
 
-Complete these tasks before Workshop 1. You've got this!
+Complete these tasks before Workshop 1. **Estimated time: 30-45 minutes**
 
-## Videos (5 minutes)
+You've got this!
 
-- [ ] Watch: [A Beginner's Guide to Microcontrollers](https://www.youtube.com/watch?v=GZAg9XSIs_Q) (5 min)
-- [ ] Watch: [Arduino Tutorial 1: Setting Up](https://www.youtube.com/watch?v=fJWR7dBuc18) (7 min) - covers all setup steps
-- [ ] Optional: [How to Use a Breadboard](https://www.youtube.com/watch?v=XpMBbQdZw) (5 min)
+## Videos (12 minutes)
+
+- [ ] Watch: [What is a Microcontroller?](https://www.youtube.com/watch?v=7BLKCZhlwBA) (4 min) - Core Electronics
+- [ ] Watch: [What Is Arduino Cloud?](https://youtu.be/27S-XI_zHQc?si=LQLqwQ3bwIbajM_U) (2 min) - Arduino official
+- [ ] Watch: [Arduino Tutorial 1: Setting Up](https://www.youtube.com/watch?v=fJWR7dBuc18) (7 min) - Paul McWhorter
+- [ ] Optional: [How to Use a Breadboard](https://www.youtube.com/watch?v=6WReFkfrUIk) (9 min) - Science Buddies
 
 ## Reading (15 minutes)
 
-- [ ] Read: [Electronics Basics 101](/pre-workshop/01-basics.md) (15 min)
+- [ ] Read: [Electronics Basics 101](/0-pre-workshop/01-basics.md) (15 min)
 
 ## Setup (10 minutes)
 
-- [ ] Follow: [Arduino IDE Setup](/pre-workshop/02-arduino-setup.md)
+- [ ] Follow: [Arduino IDE Setup](/0-pre-workshop/02-arduino-setup.md)
 - [ ] Create Arduino account ✅
 - [ ] Install ESP32 board support ✅
 - [ ] Select "ESP32 Dev Module" board ✅

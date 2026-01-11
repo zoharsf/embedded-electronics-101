@@ -85,5 +85,5 @@ void loop() {
 
 ---
 
-Next: [Code Tweaking](/inter-workshop/03-code-tweaking.md)
+**Next:** [Code Tweaking & Experiments](/2-inter-workshop/02-code-tweaking.md)
 

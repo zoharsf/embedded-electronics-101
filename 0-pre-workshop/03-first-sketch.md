@@ -44,5 +44,5 @@ void loop() {
 
 ---
 
-**Ready?** → [Homework Checklist](/pre-workshop/homework-checklist.md)
+**Ready?** → [Homework Checklist](/0-pre-workshop/homework-checklist.md)
 

@@ -31,29 +31,21 @@ What you'll learn:
 
 ## Recommended for Pre-Workshop
 
-### 3. Breadboard Basics (5 min)
-**[Complete Beginner's Guide to Using a Breadboard](https://www.youtube.com/watch?v=XpMZoR3fgd0)** by Moritz Klein
-
-What you'll learn:
-- How breadboards work internally
-- How to identify components
-- How to read schematics
-- Why you can't use them wrong!
-
-**Optional but recommended** - super clear explanation.
-
----
-
-### 4. How a Breadboard Works (9 min)
+### 3. Breadboard Basics (9 min)
 **[How to Use a Breadboard](https://www.youtube.com/watch?v=6WReFkfrUIk)** by Science Buddies
 
 What you'll learn:
-- Internal metal strips (why holes connect)
+- How breadboards work internally
 - Power buses (the special rails)
 - Common beginner mistakes
 - Simple circuits explained
 
-**If you want deep understanding of breadboards, watch this.**
+**Optional but highly recommended** - super clear explanation.
+
+---
+
+### 4. How a Breadboard Works (Deep Dive - Optional)
+For those who want to understand every detail about breadboards.
 
 ---
 

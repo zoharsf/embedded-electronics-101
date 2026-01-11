@@ -62,16 +62,20 @@ Choose **ONE** project. You'll work in a small group on it during Workshop 2!
 
 1. Read all 4 descriptions above
 2. Pick your favorite
-3. Fill out this form: [Google Form Link](https://forms.gle/...)
-4. We'll organize groups at Workshop 2
+3. Remember your choice for Workshop 2!
+4. We'll organize groups at the workshop
+
+**Pro tip:** You can always change your mind when you arrive at Workshop 2!
 
 ---
 
 **Unsure? Pick based on:**
-- **Like hardware?** → LED Light Show
+- **Like hardware & lights?** → LED Light Show
 - **Like logic & games?** → Button Game
-- **Like data?** → Data Dashboard or Sensor Logger
+- **Like data analysis?** → Data Dashboard or Sensor Logger
 - **Want something simple?** → Sensor Logger
+- **First time coding?** → Sensor Logger (easiest)
+- **Want a challenge?** → Data Dashboard
 
 ---
 

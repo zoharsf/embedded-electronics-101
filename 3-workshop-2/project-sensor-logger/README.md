@@ -66,5 +66,5 @@ See [code-dht11-read.ino](code-dht11-read.ino) for complete sketch.
 
 ---
 
-Finished? Try extending it! See [Resources](/workshop-2/resources.md)
+Finished? Try extending it! See [Project Inspiration](/resources/inspiration.md)
 

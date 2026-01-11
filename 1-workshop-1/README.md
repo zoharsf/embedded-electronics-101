@@ -40,15 +40,15 @@ Complete kit with everything you need:
 
 ## 📚 Materials for Today
 
-- [Circuit Diagram & How to Build](/workshop-1/circuit-diagram.md)
-- [Code: Basic LED Blink](/workshop-1/code-led-blink.ino) (warm-up)
-- [Code: LED + Button (main project)](/workshop-1/code-led-button.ino)
-- [Troubleshooting Guide](/workshop-1/troubleshooting.md)
+- [Circuit Diagram & How to Build](/1-workshop-1/circuit-diagram.md)
+- [Code: Basic LED Blink](/1-workshop-1/code-led-blink.ino) (warm-up)
+- [Code: LED + Button (main project)](/1-workshop-1/code-led-button.ino)
+- [Troubleshooting Guide](/1-workshop-1/troubleshooting.md)
 
 ## 🚨 If Something Doesn't Work
 
 **First: Check the troubleshooting guide**
-→ [Workshop 1 Troubleshooting](/workshop-1/troubleshooting.md)
+→ [Workshop 1 Troubleshooting](/1-workshop-1/troubleshooting.md)
 
 **Still stuck?**
 → Open an [Issue](https://github.com/zoharsf/embedded-electronics-101/issues) with:
@@ -63,11 +63,11 @@ You'll get **inter-workshop homework** to:
 - Pick which project you want to build in Workshop 2
 
 **Start here when you get it:**
-→ [Inter-Workshop Homework](/inter-workshop/)
+→ [Inter-Workshop Homework](/2-inter-workshop/)
 
 ---
 
-**Questions before the workshop?** Check [Troubleshooting](/workshop-1/troubleshooting.md)
+**Questions before the workshop?** Check [Troubleshooting](/1-workshop-1/troubleshooting.md)
 
 **Ready to learn?** Let's build something! 🚀
 

@@ -82,5 +82,5 @@ After watching, come back and follow the step-by-step guide below.
 
 ---
 
-**Next →** [Homework Checklist](/pre-workshop/homework-checklist.md)
+**Next →** [Homework Checklist](/0-pre-workshop/homework-checklist.md)
 

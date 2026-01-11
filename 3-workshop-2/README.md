@@ -21,10 +21,10 @@ By the end of this workshop:
 
 Pick ONE (you chose in inter-workshop homework):
 
-- [🌡️ Sensor Data Logger](/workshop-2/project-sensor-logger/)
-- [💡 LED Light Show](/workshop-2/project-led-patterns/)
-- [🎮 Button Game](/workshop-2/project-button-game/)
-- [📊 Data Dashboard](/workshop-2/project-data-dashboard/)
+- [🌡️ Sensor Data Logger](/3-workshop-2/project-sensor-logger/)
+- [💡 LED Light Show](/3-workshop-2/project-led-patterns/)
+- [🎮 Button Game](/3-workshop-2/project-button-game/)
+- [📊 Data Dashboard](/3-workshop-2/project-data-dashboard/)
 
 ## What You'll Get
 
@@ -38,4 +38,12 @@ Each project has:
 ---
 
 **Pick your project above and get started!** →
+
+---
+
+## 🎯 After Workshop 2
+
+**Completed your project?** Great! Ready for the next level?
+
+→ [Inter-Workshop 2 Homework](/4-inter-workshop/) - Prepare for Workshop 3 (WiFi, Bluetooth, IoT)
 
