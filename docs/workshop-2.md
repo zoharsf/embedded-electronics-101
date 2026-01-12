@@ -1,9 +1,3 @@
----
-layout: default
-title: Workshop 2 - Group Projects
-description: Build sensor-based projects with your ESP32
----
-
 # Workshop 2: Group Projects
 
 **Duration:** 1.5 hours  
@@ -97,7 +91,7 @@ Build a Python dashboard that reads sensor data from ESP32 and creates live grap
 
 ## What's Next?
 
-After Workshop 2, complete the [Inter-Workshop 2 Homework](inter-workshop-2.html) to prepare for Workshop 3's advanced IoT topics!
+After Workshop 2, complete the [Inter-Workshop 2 Homework](inter-workshop-2.md) to prepare for Workshop 3's advanced IoT topics!
 
 ## Extension Ideas
 
@@ -109,4 +103,4 @@ Want to combine or extend projects?
 
 ---
 
-**Previous:** [Inter-Workshop Homework](inter-workshop.html) | **Next:** [Inter-Workshop 2 Homework](inter-workshop-2.html)
+**Previous:** [Inter-Workshop Homework](inter-workshop.md) | **Next:** [Inter-Workshop 2 Homework](inter-workshop-2.md)

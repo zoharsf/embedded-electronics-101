@@ -1,0 +1,129 @@
+# MkDocs configuration for Embedded Electronics 101
+
+site_name: Embedded Electronics 101
+site_description: Learn embedded electronics with ESP32 microcontroller through hands-on workshops
+site_author: zoharsf
+site_url: https://zoharsf.github.io/embedded-electronics-101/
+
+# Repository
+repo_name: zoharsf/embedded-electronics-101
+repo_url: https://github.com/zoharsf/embedded-electronics-101
+edit_uri: edit/main/docs/
+
+# Copyright
+copyright: Copyright &copy; 2026 Zohar Fischer
+
+# Theme configuration
+theme:
+  name: material
+  palette:
+    # Light mode
+    - scheme: default
+      primary: indigo
+      accent: purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - scheme: slate
+      primary: indigo
+      accent: purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+  icon:
+    repo: fontawesome/brands/github
+
+# Navigation
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Pre-Workshop Homework: pre-workshop.md
+  - Workshop 1:
+      - Overview: workshop-1.md
+  - Workshop 2:
+      - Inter-Workshop Homework: inter-workshop.md
+      - Workshop 2 Projects: workshop-2.md
+  - Workshop 3:
+      - Inter-Workshop 2 Homework: inter-workshop-2.md
+      - IoT Projects: workshop-3.md
+  - Resources:
+      - Learning Resources: resources.md
+
+# Markdown extensions
+markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: zoharsf
+      repo: embedded-electronics-101
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Plugins
+plugins:
+  - search:
+      lang: en
+  - minify:
+      minify_html: true
+
+# Extra
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/zoharsf/embedded-electronics-101
+      name: GitHub Repository
+  generator: false
+
+# Extra CSS (optional)
+# extra_css:
+#   - stylesheets/extra.css
+
+# Extra JavaScript (optional)
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

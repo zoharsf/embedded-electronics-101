@@ -1,9 +1,3 @@
----
-layout: default
-title: Workshop 3 - WiFi & Bluetooth IoT Projects
-description: Build connected IoT projects with WiFi and Bluetooth
----
-
 # Workshop 3: WiFi & Bluetooth IoT Projects
 
 **Duration:** 1.5-2 hours  
@@ -117,7 +111,7 @@ Common issues with Workshop 3 projects:
 ## What's Next?
 
 After Workshop 3, you have the skills to build real IoT projects! Check out:
-- [25+ Project Ideas](resources.html#project-inspiration)
+- [25+ Project Ideas](resources.md#project-inspiration)
 - Advanced topics: MQTT, cloud integration, machine learning
 - Join the maker community and share your projects!
 
@@ -140,4 +134,4 @@ These skills enable you to build:
 
 ---
 
-**Previous:** [Inter-Workshop 2 Homework](inter-workshop-2.html) | **Next:** [Project Ideas & Resources](resources.html)
+**Previous:** [Inter-Workshop 2 Homework](inter-workshop-2.md) | **Next:** [Project Ideas & Resources](resources.md)

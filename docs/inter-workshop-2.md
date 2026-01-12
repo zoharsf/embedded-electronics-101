@@ -1,9 +1,3 @@
----
-layout: default
-title: Inter-Workshop 2 Homework
-description: Prepare for Workshop 3 by learning WiFi, Bluetooth, and web servers
----
-
 # Inter-Workshop 2 Homework
 
 **Time Required:** 45-60 minutes  
@@ -78,7 +72,7 @@ Once you've completed this homework:
 - You've selected a Workshop 3 project
 - You're ready to build connected IoT devices
 
-**Next Step:** [Workshop 3: WiFi & Bluetooth](workshop-3.html)
+**Next Step:** [Workshop 3: WiFi & Bluetooth](workshop-3.md)
 
 ## Important Notes
 
@@ -93,8 +87,8 @@ Once you've completed this homework:
 
 ## Need Help?
 
-Check the [troubleshooting guide](resources.html#troubleshooting) if you encounter issues.
+Check the [troubleshooting guide](resources.md#troubleshooting) if you encounter issues.
 
 ---
 
-**Previous:** [Workshop 2](workshop-2.html) | **Next:** [Workshop 3](workshop-3.html)
+**Previous:** [Workshop 2](workshop-2.md) | **Next:** [Workshop 3](workshop-3.md)

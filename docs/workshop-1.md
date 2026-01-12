@@ -1,9 +1,3 @@
----
-layout: default
-title: Workshop 1 - Basics & First Circuit
-description: Learn microcontroller basics, breadboards, LEDs and buttons
----
-
 # Workshop 1: Basics & First Circuit
 
 **Duration:** 1.5 hours  
@@ -70,7 +64,7 @@ Common issues and solutions:
 
 ## What's Next?
 
-After Workshop 1, complete the [Inter-Workshop Homework](inter-workshop.html) to prepare for Workshop 2!
+After Workshop 1, complete the [Inter-Workshop Homework](inter-workshop.md) to prepare for Workshop 2!
 
 ## Extension Challenges
 
@@ -82,4 +76,4 @@ Want to go further? Try these:
 
 ---
 
-**Previous:** [Pre-Workshop Homework](pre-workshop.html) | **Next:** [Inter-Workshop Homework](inter-workshop.html)
+**Previous:** [Pre-Workshop Homework](pre-workshop.md) | **Next:** [Inter-Workshop Homework](inter-workshop.md)

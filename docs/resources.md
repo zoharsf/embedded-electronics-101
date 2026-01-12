@@ -1,9 +1,3 @@
----
-layout: default
-title: Resources & Further Learning
-description: Documentation, project ideas, and learning resources
----
-
 # Resources & Further Learning
 
 Everything you need to continue your electronics journey beyond the workshops.
@@ -267,4 +261,4 @@ You now have the skills to build amazing IoT projects. Remember:
 
 ---
 
-**Back to:** [Home](index.html)
+**Back to:** [Home](index.md)
