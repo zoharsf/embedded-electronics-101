@@ -1,9 +1,3 @@
----
-layout: default
-title: Embedded Electronics 101 - ESP32 Workshop Series
-description: Learn embedded electronics with ESP32 microcontroller through hands-on workshops
----
-
 # 🔌 Embedded Electronics 101: ESP32 Workshop Series
 
 Welcome! This is your complete guide to learning embedded electronics with the ESP32 microcontroller. Whether you're a complete beginner or have some experience, these workshops will get you building cool stuff in no time.
@@ -19,16 +13,16 @@ Welcome! This is your complete guide to learning embedded electronics with the E
 
 | I want to... | Go here |
 |---|---|
-| **Start from scratch** (new to electronics) | [Pre-Workshop Homework](pre-workshop.html) (30-45 min) |
-| **Prepare for Workshop 1** | [Pre-Workshop Homework](pre-workshop.html) |
-| **Review Workshop 1 materials** | [Workshop 1: Basics & First Circuit](workshop-1.html) |
-| **Get homework between workshops** | [Inter-Workshop Homework](inter-workshop.html) |
-| **Work on Workshop 2 projects** | [Workshop 2: Group Projects](workshop-2.html) |
-| **Prepare for Workshop 3** | [Inter-Workshop 2 Homework](inter-workshop-2.html) |
-| **Build connected IoT projects** | [Workshop 3: WiFi & Bluetooth](workshop-3.html) |
-| **Find project ideas** | [Project Inspiration](resources.html#project-inspiration) |
-| **Fix a problem** | [Troubleshooting Guide](resources.html#troubleshooting) |
-| **Learn more** | [Resources & Further Reading](resources.html) |
+| **Start from scratch** (new to electronics) | [Pre-Workshop Homework](pre-workshop.md) (30-45 min) |
+| **Prepare for Workshop 1** | [Pre-Workshop Homework](pre-workshop.md) |
+| **Review Workshop 1 materials** | [Workshop 1: Basics & First Circuit](workshop-1.md) |
+| **Get homework between workshops** | [Inter-Workshop Homework](inter-workshop.md) |
+| **Work on Workshop 2 projects** | [Workshop 2: Group Projects](workshop-2.md) |
+| **Prepare for Workshop 3** | [Inter-Workshop 2 Homework](inter-workshop-2.md) |
+| **Build connected IoT projects** | [Workshop 3: WiFi & Bluetooth](workshop-3.md) |
+| **Find project ideas** | [Project Inspiration](resources.md#project-inspiration) |
+| **Fix a problem** | [Troubleshooting Guide](resources.md#troubleshooting) |
+| **Learn more** | [Resources & Further Reading](resources.md) |
 
 ## 📚 The Complete Learning Path
 
@@ -36,13 +30,13 @@ Welcome! This is your complete guide to learning embedded electronics with the E
 
 ### Learning Progression
 
-1. **[Pre-Workshop Homework](pre-workshop.html)** (30-45 min) - Get ready with Arduino Cloud setup and basic concepts
-2. **[Workshop 1: Basics & First Circuit](workshop-1.html)** (1.5 hrs) - Learn microcontroller basics, breadboards, LEDs and buttons
-3. **[Inter-Workshop Homework](inter-workshop.html)** (30-45 min) - Learn about sensors and prepare for Workshop 2
-4. **[Workshop 2: Group Projects](workshop-2.html)** (1.5 hrs) - Build one of 4 sensor-based projects
-5. **[Inter-Workshop 2 Homework](inter-workshop-2.html)** (45-60 min) - Learn WiFi, Bluetooth, and web server basics
-6. **[Workshop 3: WiFi & IoT](workshop-3.html)** (1.5-2 hrs) - Build connected IoT projects
-7. **Keep Building!** - Explore [25+ project ideas](resources.html#project-inspiration)
+1. **[Pre-Workshop Homework](pre-workshop.md)** (30-45 min) - Get ready with Arduino Cloud setup and basic concepts
+2. **[Workshop 1: Basics & First Circuit](workshop-1.md)** (1.5 hrs) - Learn microcontroller basics, breadboards, LEDs and buttons
+3. **[Inter-Workshop Homework](inter-workshop.md)** (30-45 min) - Learn about sensors and prepare for Workshop 2
+4. **[Workshop 2: Group Projects](workshop-2.md)** (1.5 hrs) - Build one of 4 sensor-based projects
+5. **[Inter-Workshop 2 Homework](inter-workshop-2.md)** (45-60 min) - Learn WiFi, Bluetooth, and web server basics
+6. **[Workshop 3: WiFi & IoT](workshop-3.md)** (1.5-2 hrs) - Build connected IoT projects
+7. **Keep Building!** - Explore [25+ project ideas](resources.md#project-inspiration)
 
 ## 🛠️ Your Complete Kit
 
@@ -94,20 +88,20 @@ Each workshop includes:
 
 ## 🚀 Getting Started
 
-Ready to begin? Head to the [Pre-Workshop Homework](pre-workshop.html) to set up your development environment and learn the basics!
+Ready to begin? Head to the [Pre-Workshop Homework](pre-workshop.md) to set up your development environment and learn the basics!
 
 ## 📚 Additional Resources
 
-- [Component Datasheets](resources.html#datasheets) - Technical specifications for all components
-- [Glossary](resources.html#glossary) - Terms and definitions
-- [Video Tutorials](resources.html#videos) - Visual learning resources
-- [Project Inspiration](resources.html#project-inspiration) - 25+ ideas for your next project
+- [Component Datasheets](resources.md#datasheets) - Technical specifications for all components
+- [Glossary](resources.md#glossary) - Terms and definitions
+- [Video Tutorials](resources.md#videos) - Visual learning resources
+- [Project Inspiration](resources.md#project-inspiration) - 25+ ideas for your next project
 
 ## 🤝 Questions or Issues?
 
-- Check the [Troubleshooting Guide](resources.html#troubleshooting) for common problems
-- Review the [Glossary](resources.html#glossary) for terminology
-- Explore the [Video Playlist](resources.html#videos) for visual explanations
+- Check the [Troubleshooting Guide](resources.md#troubleshooting) for common problems
+- Review the [Glossary](resources.md#glossary) for terminology
+- Explore the [Video Playlist](resources.md#videos) for visual explanations
 
 ## 📄 License
 

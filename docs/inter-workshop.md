@@ -1,9 +1,3 @@
----
-layout: default
-title: Inter-Workshop Homework
-description: Prepare for Workshop 2 by learning about sensors
----
-
 # Inter-Workshop Homework
 
 **Time Required:** 30-45 minutes  
@@ -66,12 +60,12 @@ Once you've completed this homework:
 - You've selected a Workshop 2 project
 - You know what components you'll need
 
-**Next Step:** [Workshop 2: Group Projects](workshop-2.html)
+**Next Step:** [Workshop 2: Group Projects](workshop-2.md)
 
 ## Need Help?
 
-Check the [troubleshooting guide](resources.html#troubleshooting) if you encounter issues.
+Check the [troubleshooting guide](resources.md#troubleshooting) if you encounter issues.
 
 ---
 
-**Previous:** [Workshop 1](workshop-1.html) | **Next:** [Workshop 2](workshop-2.html)
+**Previous:** [Workshop 1](workshop-1.md) | **Next:** [Workshop 2](workshop-2.md)

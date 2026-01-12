@@ -1,9 +1,3 @@
----
-layout: default
-title: Pre-Workshop Homework
-description: Prepare for your first electronics workshop with ESP32
----
-
 # Pre-Workshop Homework
 
 **Time Required:** 30-45 minutes  
@@ -66,8 +60,8 @@ Once you've completed the homework:
 - ✅ You understand basic electronics concepts
 - ✅ You've run your first sketch
 
-**Next Step:** [Workshop 1: Basics & First Circuit](workshop-1.html)
+**Next Step:** [Workshop 1: Basics & First Circuit](workshop-1.md)
 
 ## Need Help?
 
-Check the [troubleshooting guide](resources.html#troubleshooting) if you encounter issues.
+Check the [troubleshooting guide](resources.md#troubleshooting) if you encounter issues.
