@@ -1,6 +1,6 @@
 # Workshop 3: WiFi & Bluetooth IoT Projects
 
-**Duration:** 1.5-2 hours  
+**Duration:** 1.5-2 hours
 **Difficulty:** Intermediate to Advanced
 
 ## Choose Your IoT Project
@@ -9,71 +9,44 @@ In Workshop 3, you'll build connected devices that communicate wirelessly. Each 
 
 ## Project Options
 
-### 🌤️ Project 1: WiFi Weather Station
-**Difficulty:** ⭐⭐⭐ Intermediate  
-**Time:** 1.5 hours
+### Project 1: WiFi Weather Station
+**Difficulty:** ⭐⭐⭐ Intermediate | **Time:** 1.5 hours
 
 Build a web-accessible weather station with temperature, humidity, and light sensors.
 
-**You'll Learn:**
-- WiFi connectivity
-- Web server creation
-- HTML/CSS/JavaScript dashboard
-- JSON API for sensor data
-- Real-time data updates
+**What you'll build:** A web dashboard accessible from any browser on your network, showing real-time sensor data with auto-refresh.
 
-**Features:**
-- Beautiful web interface
-- Auto-refreshing sensor readings
-- Mobile-responsive design
-- Accessible from any device on your network
+**Circuit:**
+```
+DHT11: VCC→3.3V, DATA→GPIO 5, GND→GND
+LDR:   3.3V→LDR→GPIO 34→10kΩ→GND
+```
 
 [View WiFi Weather Station guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/5-workshop-3/project-wifi-weather/README.md)
 
 ---
 
-### 📱 Project 2: Bluetooth LED Controller
-**Difficulty:** ⭐⭐ Beginner/Intermediate  
-**Time:** 1-1.5 hours
+### Project 2: Bluetooth LED Controller
+**Difficulty:** ⭐⭐ Beginner/Intermediate | **Time:** 1-1.5 hours
 
-Control LEDs and motors from your smartphone using Bluetooth.
+Control LEDs and read sensors from your phone using Bluetooth Serial commands.
 
-**You'll Learn:**
-- Bluetooth Serial communication
-- Command protocol design
-- Phone app integration
-- Remote device control
+**What you'll build:** A command-based system where you send text commands (like `RED:ON`, `TEMP`, `STATUS`) from your phone to control hardware.
 
-**Features:**
-- Control from Android/iOS
-- Multiple control modes
-- LED patterns and colors
-- Optional motor control
-- Serial debugging
+**Commands include:** LED on/off, blink patterns, temperature/humidity readings, status queries
 
 [View Bluetooth Controller guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/5-workshop-3/project-bluetooth-controller/README.md)
 
 ---
 
-### 📈 Project 3: IoT Dashboard
-**Difficulty:** ⭐⭐⭐⭐ Advanced  
-**Time:** 2 hours
+### Project 3: IoT Dashboard
+**Difficulty:** ⭐⭐⭐⭐ Advanced | **Time:** 2 hours
 
-Create an advanced web dashboard with live graphs and multiple sensor monitoring.
+Create a full-featured web dashboard with sensor monitoring, LED control, and a JSON API.
 
-**You'll Learn:**
-- Multi-sensor integration
-- Real-time charting with Chart.js
-- Advanced web interface design
-- JSON API design
-- Historical data tracking
+**What you'll build:** A modern dark-themed dashboard with real-time sensor cards, interactive LED toggle buttons, light level bar, and a REST API at `/api/data`.
 
-**Features:**
-- Live updating charts
-- Multiple sensor displays
-- Modern CSS animations
-- Historical data graphing
-- Mobile-responsive layout
+**Features:** Temperature + humidity + light monitoring, LED control from browser, responsive mobile layout, JSON API for integration
 
 [View IoT Dashboard guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/5-workshop-3/project-web-dashboard/README.md)
 
@@ -84,28 +57,20 @@ Create an advanced web dashboard with live graphs and multiple sensor monitoring
 | Project | WiFi | Bluetooth | Sensors | Web UI | Difficulty |
 |---------|------|-----------|---------|--------|------------|
 | Weather Station | ✅ | - | DHT11 + LDR | Basic | ⭐⭐⭐ |
-| Bluetooth Controller | - | ✅ | - | - | ⭐⭐ |
-| IoT Dashboard | ✅ | - | Multiple | Advanced | ⭐⭐⭐⭐ |
+| Bluetooth Controller | - | ✅ | DHT11 | - | ⭐⭐ |
+| IoT Dashboard | ✅ | - | DHT11 + LDR | Advanced | ⭐⭐⭐⭐ |
 
 ## Prerequisites
 
 Before starting Workshop 3:
 - ✅ Complete Inter-Workshop 2 Homework
-- ✅ Have WiFi credentials ready (2.4GHz network)
+- ✅ Have WiFi credentials ready (2.4 GHz network)
 - ✅ Smartphone with Bluetooth (for Project 2)
 - ✅ Basic understanding of HTML/CSS (for web projects)
 
-## Getting Started
-
-1. **Complete your homework** - Finish inter-workshop 2 materials
-2. **Choose your project** - Pick based on your interests
-3. **Gather WiFi info** - Have network name and password ready
-4. **Follow the guide** - Each project has detailed instructions
-
 ## Troubleshooting
 
-Common issues with Workshop 3 projects:
-
+Common WiFi, Bluetooth, and web server issues:
 [View Workshop 3 troubleshooting](https://github.com/zoharsf/embedded-electronics-101/blob/main/5-workshop-3/troubleshooting.md)
 
 ## What's Next?
@@ -117,20 +82,9 @@ After Workshop 3, you have the skills to build real IoT projects! Check out:
 
 ## Extension Ideas
 
-Take your projects further:
-- **Weather Station:** Add weather forecasts, email alerts, data logging
+- **Weather Station:** Add forecasts, email alerts, data logging
 - **Bluetooth Controller:** Add voice control, automation, scheduling
 - **IoT Dashboard:** Add cloud storage, remote access, mobile app
-
-## Real-World Applications
-
-These skills enable you to build:
-- Home automation systems
-- Environmental monitoring
-- Remote control devices
-- Data logging systems
-- Smart home devices
-- Industrial IoT sensors
 
 ---
 

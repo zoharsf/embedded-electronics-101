@@ -13,11 +13,11 @@ You've got this!
 
 ## Reading (15 minutes)
 
-- [ ] Read: [Electronics Basics 101](/0-pre-workshop/01-basics.md) (15 min)
+- [ ] Read: [Electronics Basics 101](./01-basics.md) (15 min)
 
 ## Setup (10 minutes)
 
-- [ ] Follow: [Arduino IDE Setup](/0-pre-workshop/02-arduino-setup.md)
+- [ ] Follow: [Arduino IDE Setup](./02-arduino-setup.md)
 - [ ] Create Arduino account ✅
 - [ ] Install ESP32 board support ✅
 - [ ] Select "ESP32 Dev Module" board ✅
@@ -68,9 +68,9 @@ You now know:
 
 ## Still Stuck?
 
-- **Can't install Arduino IDE?** → [Troubleshooting](/resources/troubleshooting-master.md#setup-issues)
-- **Don't understand a concept?** → [Glossary](/resources/glossary.md)
-- **Want more info?** → [Resources](/resources/)
+- **Can't install Arduino IDE?** → [Troubleshooting](../resources/troubleshooting-master.md#setup-issues)
+- **Don't understand a concept?** → [Glossary](../resources/glossary.md)
+- **Want more info?** → [Resources](../resources/)
 
 **See you at Workshop 1! 🚀**
 

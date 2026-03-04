@@ -241,4 +241,4 @@ Once connected, your ESP32 can:
 
 ---
 
-**Next →** [Bluetooth Basics](/4-inter-workshop/02-bluetooth-basics.md)
+**Next →** [Bluetooth Basics](./02-bluetooth-basics.md)

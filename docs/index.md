@@ -49,8 +49,8 @@ Welcome! This is your complete guide to learning embedded electronics with the E
 - Multiple Jumper Wires (male-to-male, various colors)
 
 **Outputs:**
-- 3x LEDs (Red, Yellow, Green)
-- 3x Resistors (220Ω for LEDs)
+- 5x LEDs (Red, Green, Blue, Yellow, White)
+- 5x 220Ω Resistors (for LEDs)
 
 **Inputs:**
 - 3x Push Buttons

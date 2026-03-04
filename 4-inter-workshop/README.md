@@ -44,14 +44,14 @@ Full IoT dashboard with data logging, charts, and remote control.
 
 ## Learning Path
 
-**Start here →** [WiFi Basics](/4-inter-workshop/01-wifi-basics.md)
+**Start here →** [WiFi Basics](./01-wifi-basics.md)
 
-**Then →** [Bluetooth Basics](/4-inter-workshop/02-bluetooth-basics.md)
+**Then →** [Bluetooth Basics](./02-bluetooth-basics.md)
 
-**Then →** [Web Server Fundamentals](/4-inter-workshop/03-web-server-basics.md)
+**Then →** [Web Server Fundamentals](./03-web-server-basics.md)
 
-**Finally →** [Project Picker](/4-inter-workshop/project-picker.md)
+**Finally →** [Project Picker](./project-picker.md)
 
 ---
 
-**Questions?** Check [Resources](/resources/) or open an [Issue](https://github.com/zoharsf/embedded-electronics-101/issues)!
+**Questions?** Check [Resources](../resources/) or open an [Issue](https://github.com/zoharsf/embedded-electronics-101/issues)!

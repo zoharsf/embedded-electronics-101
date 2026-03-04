@@ -1,6 +1,6 @@
 # Workshop 2: Group Projects
 
-**Duration:** 1.5 hours  
+**Duration:** 1.5 hours
 **Difficulty:** Intermediate
 
 ## Choose Your Project
@@ -9,67 +9,65 @@ In Workshop 2, you'll build one of four projects. Each teaches different skills 
 
 ## Project Options
 
-### 🌡️ Project 1: Sensor Logger
-**Difficulty:** ⭐⭐ Beginner/Intermediate  
-**Time:** 1-1.5 hours
+### Project 1: Sensor Logger
+**Difficulty:** ⭐⭐ Beginner/Intermediate | **Time:** 1-1.5 hours
 
 Read temperature, humidity, and light data. Log it to your computer via Serial monitor.
 
-**You'll Learn:**
-- DHT11 sensor integration
-- LDR (light sensor) usage
-- Serial communication
-- Data formatting
+**You'll Learn:** DHT11 sensor integration, LDR usage, Serial communication, data formatting
 
-[View Sensor Logger guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/3-workshop-2/project-sensor-logger/README.md)
+**Key code snippet:**
+```cpp
+float temp = dht.readTemperature();
+float hum = dht.readHumidity();
+int light = analogRead(34);
+Serial.print(temp); Serial.print(",");
+Serial.print(hum); Serial.print(",");
+Serial.println(light);
+```
+
+[View full Sensor Logger guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/3-workshop-2/project-sensor-logger/README.md)
 
 ---
 
-### 💡 Project 2: LED Light Show
-**Difficulty:** ⭐⭐ Intermediate  
-**Time:** 1-1.5 hours
+### Project 2: LED Light Show
+**Difficulty:** ⭐⭐ Intermediate | **Time:** 1-1.5 hours
 
 Create animated LED patterns with 3 LEDs. Use buttons to control modes and speed.
 
-**You'll Learn:**
-- Multiple LED control
-- Pattern programming
-- Button state machines
-- Timing and delays
+**You'll Learn:** Multiple LED control, pattern programming, button state machines, timing
 
-[View LED Light Show guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/3-workshop-2/project-led-patterns/README.md)
+**Patterns include:** All Blink, Chase Sequence, Breathing Effect (PWM), Random Disco, Color Mixing
+
+[View full LED Light Show guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/3-workshop-2/project-led-patterns/README.md)
 
 ---
 
-### 🎮 Project 3: Button Game
-**Difficulty:** ⭐⭐⭐ Intermediate/Advanced  
-**Time:** 1.5-2 hours
+### Project 3: Button Game
+**Difficulty:** ⭐⭐⭐ Intermediate/Advanced | **Time:** 1.5-2 hours
 
-Build reaction timer or Simon Says memory game with 4 LEDs and 4 buttons.
+Build a reaction timer or Simon Says memory game with LEDs and buttons.
 
-**You'll Learn:**
-- Game logic programming
-- Multiple button handling
-- Sequence generation
-- Score tracking
+**You'll Learn:** Game logic, multiple button handling, sequence generation, score tracking
 
-[View Button Game guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/3-workshop-2/project-button-game/README.md)
+**Two game modes:**
+1. **Reaction Timer** — LED lights up randomly, measure your response time
+2. **Memory Game** — Simon Says with LED sequences that get progressively longer
+
+[View full Button Game guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/3-workshop-2/project-button-game/README.md)
 
 ---
 
-### 📊 Project 4: Data Dashboard
-**Difficulty:** ⭐⭐⭐⭐ Advanced  
-**Time:** 2 hours
+### Project 4: Data Dashboard
+**Difficulty:** ⭐⭐⭐⭐ Advanced | **Time:** 2 hours
 
 Build a Python dashboard that reads sensor data from ESP32 and creates live graphs.
 
-**You'll Learn:**
-- Serial data logging to CSV
-- Python setup and libraries
-- Data visualization
-- Real-time graphing
+**You'll Learn:** Serial data logging to CSV, Python setup, data visualization with matplotlib, real-time graphing
 
-[View Data Dashboard guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/3-workshop-2/project-data-dashboard/README.md)
+**Requires:** Python installed on your computer, plus `pyserial` and `matplotlib` libraries
+
+[View full Data Dashboard guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/3-workshop-2/project-data-dashboard/README.md)
 
 ---
 
@@ -91,11 +89,10 @@ Build a Python dashboard that reads sensor data from ESP32 and creates live grap
 
 ## What's Next?
 
-After Workshop 2, complete the [Inter-Workshop 2 Homework](inter-workshop-2.md) to prepare for Workshop 3's advanced IoT topics!
+After Workshop 2, complete the [Inter-Workshop 2 Homework](inter-workshop-2.md) to prepare for Workshop 3's IoT projects!
 
 ## Extension Ideas
 
-Want to combine or extend projects?
 - Add sensors to the LED Light Show (react to light levels)
 - Log Button Game scores to a dashboard
 - Create a multi-sensor monitoring station

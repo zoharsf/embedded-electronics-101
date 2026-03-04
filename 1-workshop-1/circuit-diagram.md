@@ -178,5 +178,19 @@ Upload [code-led-button.ino](code-led-button.ino) → LED lights up when button 
 
 ---
 
+## 🖥️ Try It in a Simulator
+
+Don't have your hardware yet? You can test your code in [Wokwi](https://wokwi.com/), a free online ESP32 simulator:
+
+1. Go to [wokwi.com](https://wokwi.com/)
+2. Click **"New Project"** → select **ESP32**
+3. Add an LED and resistor from the parts panel
+4. Wire them up like the circuit above
+5. Paste the blink code and click **Play**
+
+Wokwi lets you test your code before building the physical circuit!
+
+---
+
 **Stuck?** Check [Workshop 1 Troubleshooting](troubleshooting.md)
 

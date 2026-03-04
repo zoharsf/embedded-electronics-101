@@ -1,6 +1,6 @@
 # Workshop 1: Basics & First Circuit
 
-**Duration:** 1.5 hours  
+**Duration:** 1.5 hours
 **Difficulty:** Beginner
 
 ## What You'll Build
@@ -42,20 +42,91 @@ By the end of this workshop, you'll be able to:
 - Add multiple LEDs
 - Explore button debouncing
 
+---
+
+## Circuit 1: LED Blink
+
+### Schematic
+
+```
+ESP32 Pin GPIO2 ─── [220Ω Resistor] ─── LED(+) ─── GND
+```
+
+### Build Steps
+
+1. Insert LED into breadboard (long leg = positive)
+2. Connect 220Ω resistor in series with the LED's positive leg
+3. Wire ESP32 GPIO2 to the resistor
+4. Wire LED's negative leg to ESP32 GND
+
+### Code
+
+```cpp
+void setup() {
+  Serial.begin(9600);
+  pinMode(2, OUTPUT);
+  Serial.println("LED Blink starting...");
+}
+
+void loop() {
+  digitalWrite(2, HIGH);  // Turn LED on
+  Serial.println("LED ON");
+  delay(1000);            // Wait 1 second
+
+  digitalWrite(2, LOW);   // Turn LED off
+  Serial.println("LED OFF");
+  delay(1000);            // Wait 1 second
+}
+```
+
+---
+
+## Circuit 2: LED + Button
+
+### Schematic
+
+```
+ESP32 GPIO2 ── [220Ω] ── LED(+) ── GND
+
+ESP32 GPIO4 ── [Button] ── GND
+```
+
+The ESP32's internal pull-down resistor keeps GPIO4 LOW until the button is pressed.
+
+### Code
+
+```cpp
+const int LED_PIN = 2;
+const int BUTTON_PIN = 4;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(LED_PIN, OUTPUT);
+  pinMode(BUTTON_PIN, INPUT_PULLDOWN);
+  Serial.println("LED + Button ready!");
+}
+
+void loop() {
+  int buttonState = digitalRead(BUTTON_PIN);
+
+  if (buttonState == HIGH) {
+    digitalWrite(LED_PIN, HIGH);
+    Serial.println("Button pressed - LED ON");
+  } else {
+    digitalWrite(LED_PIN, LOW);
+  }
+}
+```
+
+---
+
 ## Detailed Materials
 
-### Circuit Diagram
-Detailed step-by-step instructions for building both circuits:
+For full step-by-step build instructions with breadboard layouts:
 
-[View circuit diagram guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/1-workshop-1/circuit-diagram.md)
-
-### Code Examples
-
-**LED Blink Code:**
-[View LED blink code](https://github.com/zoharsf/embedded-electronics-101/blob/main/1-workshop-1/code-led-blink.ino)
-
-**LED + Button Code:**
-[View LED button code](https://github.com/zoharsf/embedded-electronics-101/blob/main/1-workshop-1/code-led-button.ino)
+- [Circuit diagram guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/1-workshop-1/circuit-diagram.md)
+- [LED blink code](https://github.com/zoharsf/embedded-electronics-101/blob/main/1-workshop-1/code-led-blink.ino)
+- [LED button code](https://github.com/zoharsf/embedded-electronics-101/blob/main/1-workshop-1/code-led-button.ino)
 
 ### Troubleshooting
 

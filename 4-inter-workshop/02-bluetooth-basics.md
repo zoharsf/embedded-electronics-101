@@ -330,4 +330,4 @@ SerialBT.setPin("1234");        // Set PIN code
 
 ---
 
-**Next →** [Web Server Fundamentals](/4-inter-workshop/03-web-server-basics.md)
+**Next →** [Web Server Fundamentals](./03-web-server-basics.md)

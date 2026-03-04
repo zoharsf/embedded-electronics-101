@@ -2,6 +2,10 @@
 // Workshop 2: Button Reaction Game
 // Test your reflexes and memory!
 // =====================================
+//
+// Hardware: 4x LEDs + 4x 220 ohm resistors + 4x push buttons
+// Pins: GPIO 2,4,5,12 -> LEDs, GPIO 18,19,21,22 -> buttons
+// Libraries: None (built-in only)
 
 // ===== PIN DEFINITIONS =====
 const int LED_PINS[] = {2, 4, 5, 12};       // LED pins

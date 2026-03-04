@@ -42,7 +42,9 @@ void loop() {
 
 **You don't need to upload this yet.** We'll do that with actual hardware in Workshop 1!
 
+> **No hardware yet?** Try [Wokwi](https://wokwi.com/) — a free online ESP32 simulator where you can test code in your browser!
+
 ---
 
-**Ready?** → [Homework Checklist](/0-pre-workshop/homework-checklist.md)
+**Ready?** → [Homework Checklist](./homework-checklist.md)
 

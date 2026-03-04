@@ -1,6 +1,6 @@
 # Pre-Workshop Homework
 
-**Time Required:** 30-45 minutes  
+**Time Required:** 30-45 minutes
 **When to Complete:** Before Workshop 1
 
 ## Overview
@@ -9,48 +9,102 @@ Before attending Workshop 1, you'll need to set up your development environment 
 
 ## What You'll Do
 
-1. **Set up Arduino Cloud** (15 min) - Create your development environment
-2. **Learn basic electronics concepts** (10 min) - Understand voltage, current, and circuits
-3. **Get familiar with the ESP32** (5 min) - Know your microcontroller
-4. **Write your first sketch** (10 min) - Test your setup
+1. **Learn basic electronics concepts** (10 min) - Understand voltage, current, and circuits
+2. **Set up Arduino Cloud** (15 min) - Create your development environment
+3. **Write your first sketch** (10 min) - Test your setup
 
-## Detailed Instructions
+---
 
-### 1. Electronics Basics
+## 1. Electronics Basics
 
-Learn about:
-- Voltage (V) - electrical pressure
-- Current (A) - flow of electricity
-- Resistance (Ω) - opposition to current
-- Basic circuit components
+Three core concepts — master these and you're good to go.
 
-[View detailed basics guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/0-pre-workshop/01-basics.md)
+### Voltage (V) — The "Push"
 
-### 2. Arduino Cloud Setup
+Think of electricity like water flowing through a pipe:
+
+- **Voltage = Water Pressure** (how hard it's pushing)
+- Our projects use **3.3V or 5V** (low, safe voltages)
+
+### Current (I) — The "Flow"
+
+- **Current = Water Flow** (how much water moves)
+- Measured in **Amps (A)** or **Milliamps (mA)**
+- Typical LED: ~20mA
+
+### Resistance (R) — The "Brake"
+
+- **Resistance = Narrow Pipe** (slows down flow)
+- Measured in **Ohms (Ω)**
+- 220Ω resistor = perfect for LEDs
+
+**The magic formula (Ohm's Law):**
+```
+Voltage = Current × Resistance
+V = I × R
+```
+
+### LEDs: Two Key Rules
+
+1. **Polarity matters:** Long leg (+) goes to the GPIO pin side, short leg (-) goes to ground
+2. **Always use a resistor:** Without one, the LED draws too much current and burns out. Use 220Ω.
+
+[View full electronics basics guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/0-pre-workshop/01-basics.md)
+
+---
+
+## 2. Arduino Cloud Setup
 
 Set up your development environment:
-1. Create Arduino account
-2. Install Arduino Cloud Agent
-3. Connect your ESP32
-4. Test the connection
 
-[View Arduino setup guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/0-pre-workshop/02-arduino-setup.md)
+1. Go to [Arduino Cloud](https://create.arduino.cc/) and create an account
+2. Install the Arduino Create Agent when prompted
+3. Connect your ESP32 via USB-C
+4. Select **ESP32 Dev Module** as your board
+5. Verify the connection works (green checkmark)
 
-### 3. First Sketch
+**Troubleshooting:**
+- Make sure you're using a **data** cable, not a charge-only cable
+- Try a different USB port if the board isn't detected
+- On Windows, you may need to install CP2102 drivers
 
-Write and upload your first program:
-- Understand the Arduino sketch structure
-- Learn about `setup()` and `loop()`
-- Upload a simple blink program
-- Verify it works on your ESP32
+[View detailed Arduino setup guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/0-pre-workshop/02-arduino-setup.md)
+
+---
+
+## 3. First Sketch (Optional but Recommended)
+
+Write and upload your first program to test everything works:
+
+```cpp
+void setup() {
+  Serial.begin(9600);
+  Serial.println("Hello from ESP32!");
+}
+
+void loop() {
+  Serial.println("I'm alive!");
+  delay(2000);
+}
+```
+
+**Key concepts:**
+- `setup()` — runs once when the board powers on
+- `loop()` — runs forever, over and over
+- `Serial.println()` — sends text to Serial Monitor for debugging
 
 [View first sketch tutorial](https://github.com/zoharsf/embedded-electronics-101/blob/main/0-pre-workshop/03-first-sketch.md)
 
+---
+
 ## Homework Checklist
 
-Use this checklist to verify you've completed everything:
+- [ ] Understand voltage, current, and resistance
+- [ ] Arduino Cloud account created
+- [ ] ESP32 connected and recognized
+- [ ] (Optional) First sketch uploaded and running
 
-[View homework checklist](https://github.com/zoharsf/embedded-electronics-101/blob/main/0-pre-workshop/homework-checklist.md)
+[View full homework checklist](https://github.com/zoharsf/embedded-electronics-101/blob/main/0-pre-workshop/homework-checklist.md)
 
 ## Ready for Workshop 1?
 
@@ -58,7 +112,6 @@ Once you've completed the homework:
 - ✅ You have Arduino Cloud set up
 - ✅ Your ESP32 can connect and upload code
 - ✅ You understand basic electronics concepts
-- ✅ You've run your first sketch
 
 **Next Step:** [Workshop 1: Basics & First Circuit](workshop-1.md)
 
