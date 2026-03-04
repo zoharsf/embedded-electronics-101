@@ -496,4 +496,4 @@ With web servers, you can create:
 
 ---
 
-**Next →** [Pick Your Workshop 3 Project](/4-inter-workshop/project-picker.md)
+**Next →** [Pick Your Workshop 3 Project](./project-picker.md)

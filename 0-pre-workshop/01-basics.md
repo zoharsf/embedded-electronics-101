@@ -143,5 +143,5 @@ You now understand:
 - ✅ How buttons and breadboards work
 - ✅ What microcontroller pins do
 
-**Next →** [Arduino IDE Setup](/0-pre-workshop/02-arduino-setup.md)
+**Next →** [Arduino IDE Setup](./02-arduino-setup.md)
 

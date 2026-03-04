@@ -194,4 +194,4 @@ int reactionTime = endTime - startTime;  // Calculate difference
 
 ---
 
-**Questions?** Check [Resources](/resources/) or open an [Issue](https://github.com/zoharsf/embedded-electronics-101/issues)!
+**Questions?** Check [Resources](../../resources/) or open an [Issue](https://github.com/zoharsf/embedded-electronics-101/issues)!

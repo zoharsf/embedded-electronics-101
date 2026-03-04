@@ -157,4 +157,4 @@ These experiments teach you:
 
 ---
 
-**Done experimenting?** → [Pick Your Workshop 2 Project](/2-inter-workshop/project-picker.md)
+**Done experimenting?** → [Pick Your Workshop 2 Project](./project-picker.md)

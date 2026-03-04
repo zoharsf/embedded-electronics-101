@@ -2,6 +2,10 @@
 // Workshop 1: Simple LED Blink
 // Your very first Arduino sketch!
 // =====================================
+//
+// Hardware: 1x LED + 1x 220 ohm resistor
+// Pin: GPIO 2 -> 220 ohm resistor -> LED -> GND
+// Libraries: None (built-in only)
 
 void setup() {
   // setup() runs ONCE when board powers on

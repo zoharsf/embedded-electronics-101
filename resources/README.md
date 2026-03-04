@@ -12,7 +12,7 @@
 
 ## 📺 Video Playlist
 
-→ [Video Playlist](/resources/video-playlist.md)
+→ [Video Playlist](./video-playlist.md)
 
 **Includes:**
 - Microcontroller basics
@@ -24,7 +24,7 @@
 
 ## 🔧 Troubleshooting
 
-→ [Troubleshooting Master Guide](/resources/troubleshooting-master.md)
+→ [Troubleshooting Master Guide](./troubleshooting-master.md)
 
 **Covers:**
 - Setup issues (board not found, compilation errors)
@@ -36,7 +36,7 @@
 
 ## 📖 Glossary
 
-→ [Electronics Glossary](/resources/glossary.md)
+→ [Electronics Glossary](./glossary.md)
 
 **Quick definitions for:**
 - Voltage, current, resistance
@@ -48,7 +48,7 @@
 
 ## 📋 Component Datasheets
 
-→ [Component Datasheets & Specs](/resources/component-datasheets.md)
+→ [Component Datasheets & Specs](./component-datasheets.md)
 
 **Detailed information on:**
 - ESP32 development board (pinout, specifications)
@@ -64,7 +64,7 @@
 
 ## 💡 Project Inspiration
 
-→ [Project Ideas & Resources](/resources/inspiration.md)
+→ [Project Ideas & Resources](./inspiration.md)
 
 **Multiple project ideas organized by difficulty:**
 
@@ -176,7 +176,7 @@ Plus: Learning resources, where to buy components, tool recommendations!
 
 ## 🆘 Still Need Help?
 
-1. **Check troubleshooting guide** → [Troubleshooting Master](/resources/troubleshooting-master.md)
+1. **Check troubleshooting guide** → [Troubleshooting Master](./troubleshooting-master.md)
 2. **Search the issue** → Google + "ESP32" or "Arduino"
 3. **Ask the community** → Arduino/ESP32 forums
 4. **Open an issue** → [GitHub Issues](https://github.com/zoharsf/embedded-electronics-101/issues)

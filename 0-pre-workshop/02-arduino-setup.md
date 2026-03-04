@@ -77,10 +77,10 @@ After watching, come back and follow the step-by-step guide below.
 - Try again in a few minutes
 
 **Still stuck?**
-- Check [Troubleshooting Master](/resources/troubleshooting-master.md)
+- Check [Troubleshooting Master](../resources/troubleshooting-master.md)
 - Open an [Issue](https://github.com/zoharsf/embedded-electronics-101/issues)
 
 ---
 
-**Next →** [Homework Checklist](/0-pre-workshop/homework-checklist.md)
+**Next →** [Homework Checklist](./homework-checklist.md)
 

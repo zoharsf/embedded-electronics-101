@@ -2,6 +2,10 @@
 // Workshop 2: LED Light Show
 // Multiple patterns with button control
 // =====================================
+//
+// Hardware: 3x LEDs + 3x 220 ohm resistors + 2x push buttons
+// Pins: GPIO 2,4,5 -> LEDs, GPIO 18 -> mode button, GPIO 19 -> speed button
+// Libraries: None (built-in only)
 
 // ===== PIN DEFINITIONS =====
 const int LED_RED = 2;

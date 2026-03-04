@@ -15,16 +15,16 @@ Welcome! This is your complete guide to learning embedded electronics with the E
 
 | I want to... | Go here |
 |---|---|
-| **Start from scratch** (new to electronics) | [Pre-Workshop Homework](/0-pre-workshop/) (30-45 min) |
-| **Prepare for Workshop 1** | [Pre-Workshop Homework](/0-pre-workshop/) |
-| **Review Workshop 1 materials** | [Workshop 1: Basics & First Circuit](/1-workshop-1/) |
-| **Get homework between workshops** | [Inter-Workshop Homework](/2-inter-workshop/) |
-| **Work on Workshop 2 projects** | [Workshop 2: Group Projects](/3-workshop-2/) |
-| **Prepare for Workshop 3** | [Inter-Workshop 2 Homework](/4-inter-workshop/) |
-| **Build connected IoT projects** | [Workshop 3: WiFi & Bluetooth](/5-workshop-3/) |
-| **Find project ideas** | [Project Inspiration](/resources/inspiration.md) |
-| **Fix a problem** | [Troubleshooting Guide](/resources/troubleshooting-master.md) |
-| **Learn more** | [Resources & Further Reading](/resources/) |
+| **Start from scratch** (new to electronics) | [Pre-Workshop Homework](./0-pre-workshop/) (30-45 min) |
+| **Prepare for Workshop 1** | [Pre-Workshop Homework](./0-pre-workshop/) |
+| **Review Workshop 1 materials** | [Workshop 1: Basics & First Circuit](./1-workshop-1/) |
+| **Get homework between workshops** | [Inter-Workshop Homework](./2-inter-workshop/) |
+| **Work on Workshop 2 projects** | [Workshop 2: Group Projects](./3-workshop-2/) |
+| **Prepare for Workshop 3** | [Inter-Workshop 2 Homework](./4-inter-workshop/) |
+| **Build connected IoT projects** | [Workshop 3: WiFi & Bluetooth](./5-workshop-3/) |
+| **Find project ideas** | [Project Inspiration](./resources/inspiration.md) |
+| **Fix a problem** | [Troubleshooting Guide](./resources/troubleshooting-master.md) |
+| **Learn more** | [Resources & Further Reading](./resources/) |
 
 ## 📚 The Complete Learning Path
 
@@ -55,10 +55,11 @@ flowchart LR;
 - 5x LEDs (red, green, blue, yellow, white)
 - 1x DHT11 Sensor (temperature & humidity)
 - 1x Light-Sensitive Resistor (brightness detector)
-- Multiple Push Buttons (user input)
-- Multiple 220Ω Resistors (current limiting)
+- 3x Push Buttons (user input)
+- 5x 220Ω Resistors (current limiting for LEDs)
+- 2x 10kΩ Resistors (for buttons and LDR)
 
-→ Full [Kit Contents & BOM](/KIT_CONTENTS.md)
+→ Full [Kit Contents & BOM](./KIT_CONTENTS.md)
 
 ## 💡 Core Concepts You'll Master
 
@@ -87,12 +88,12 @@ By the end of these workshops, you'll understand:
 
 ## 🤔 Questions or Issues?
 
-- **Stuck during setup?** → [Troubleshooting Master Guide](/resources/troubleshooting-master.md)
-- **Don't know what a term means?** → [Electronics Glossary](/resources/glossary.md)
-- **Need component specs?** → [Component Datasheets](/resources/component-datasheets.md)
-- **Looking for project ideas?** → [Project Inspiration](/resources/inspiration.md) (Multiple ideas!)
-- **Want video tutorials?** → [Video Playlist](/resources/video-playlist.md)
-- **Want to learn more?** → [Resources & Further Reading](/resources/README.md)
+- **Stuck during setup?** → [Troubleshooting Master Guide](./resources/troubleshooting-master.md)
+- **Don't know what a term means?** → [Electronics Glossary](./resources/glossary.md)
+- **Need component specs?** → [Component Datasheets](./resources/component-datasheets.md)
+- **Looking for project ideas?** → [Project Inspiration](./resources/inspiration.md) (Multiple ideas!)
+- **Want video tutorials?** → [Video Playlist](./resources/video-playlist.md)
+- **Want to learn more?** → [Resources & Further Reading](./resources/README.md)
 
 ## 📝 License
 
@@ -100,6 +101,6 @@ MIT License - Use this however you want! Share it, modify it, run your own works
 
 ---
 
-**Ready to build something awesome?** Start here → [Pre-Workshop Homework](/0-pre-workshop/README.md)
+**Ready to build something awesome?** Start here → [Pre-Workshop Homework](./0-pre-workshop/README.md)
 
 Good luck! 🚀

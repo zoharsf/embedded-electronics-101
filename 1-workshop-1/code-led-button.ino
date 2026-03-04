@@ -2,6 +2,10 @@
 // WORKSHOP 1: LED CONTROLLED BY BUTTON
 // Your first real interactive circuit!
 // =====================================
+//
+// Hardware: 1x LED + 1x 220 ohm resistor + 1x push button
+// Pins: GPIO 2 -> LED, GPIO 4 -> Button
+// Libraries: None (built-in only)
 
 // ===== PIN DEFINITIONS =====
 const int LED_PIN = 2;      // LED connected to GPIO pin 2

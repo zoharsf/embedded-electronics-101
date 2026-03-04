@@ -54,7 +54,7 @@ By the end of this workshop, you will:
 ## 📚 Projects for Today
 
 ### Project 1: WiFi Weather Station
-→ [WiFi Weather Station Guide](/5-workshop-3/project-wifi-weather/)
+→ [WiFi Weather Station Guide](./project-wifi-weather/)
 
 **Features:**
 - Web-based dashboard
@@ -63,7 +63,7 @@ By the end of this workshop, you will:
 - Auto-refresh
 
 ### Project 2: Bluetooth Controller
-→ [Bluetooth Controller Guide](/5-workshop-3/project-bluetooth-controller/)
+→ [Bluetooth Controller Guide](./project-bluetooth-controller/)
 
 **Features:**
 - Phone control via Bluetooth
@@ -72,7 +72,7 @@ By the end of this workshop, you will:
 - Status feedback
 
 ### Project 3: IoT Dashboard
-→ [IoT Dashboard Guide](/5-workshop-3/project-web-dashboard/)
+→ [IoT Dashboard Guide](./project-web-dashboard/)
 
 **Features:**
 - Professional web interface
@@ -86,7 +86,7 @@ By the end of this workshop, you will:
 ## 🚨 If Something Doesn't Work
 
 **First: Check the troubleshooting guide**
-→ [Workshop 3 Troubleshooting](/5-workshop-3/troubleshooting.md)
+→ [Workshop 3 Troubleshooting](./troubleshooting.md)
 
 **Common issues:**
 - Can't connect to WiFi
@@ -113,16 +113,16 @@ By the end of this workshop, you will:
 - Add cloud integration
 - Build your own custom projects!
 
-**Check out:** [Project Inspiration](/resources/inspiration.md) for 25+ ideas
+**Check out:** [Project Inspiration](../resources/inspiration.md) for 25+ ideas
 
 ---
 
 ## 📖 Pre-Workshop Checklist
 
 Make sure you've completed:
-- [ ] Read [WiFi Basics](/4-inter-workshop/01-wifi-basics.md)
-- [ ] Read [Bluetooth Basics](/4-inter-workshop/02-bluetooth-basics.md)
-- [ ] Read [Web Server Fundamentals](/4-inter-workshop/03-web-server-basics.md)
+- [ ] Read [WiFi Basics](../4-inter-workshop/01-wifi-basics.md)
+- [ ] Read [Bluetooth Basics](../4-inter-workshop/02-bluetooth-basics.md)
+- [ ] Read [Web Server Fundamentals](../4-inter-workshop/03-web-server-basics.md)
 - [ ] Tested WiFi connection on your ESP32
 - [ ] Have network credentials ready
 - [ ] (Bluetooth project) Installed Serial Bluetooth Terminal app

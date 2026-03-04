@@ -2,6 +2,10 @@
 // Workshop 2: Sensor Data Logger
 // Read DHT11 temperature & humidity
 // =====================================
+//
+// Hardware: 1x DHT11 sensor
+// Pins: GPIO 5 -> DHT11 DATA, 3.3V -> DHT11 VCC, GND -> DHT11 GND
+// Libraries: DHT sensor library by Adafruit, Adafruit Unified Sensor
 
 #include <DHT.h>
 

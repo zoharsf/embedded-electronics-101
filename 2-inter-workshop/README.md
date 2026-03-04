@@ -42,5 +42,5 @@ Difficulty: ⭐⭐⭐
 
 ---
 
-**Start here:** [Sensor Basics](/2-inter-workshop/01-sensor-basics.md)
+**Start here:** [Sensor Basics](./01-sensor-basics.md)
 

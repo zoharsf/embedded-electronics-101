@@ -27,8 +27,9 @@ Everything you need is in your kit!
 | LED - Blue | 1 | Standard 5mm, ~20mA |
 | LED - Yellow | 1 | Standard 5mm, ~20mA |
 | LED - White | 1 | Standard 5mm, ~20mA |
-| Resistor - 220Ω | Multiple | Current limiting, 1/4W |
-| Push Button | Multiple | 6mm momentary switch |
+| Resistor - 220Ω | 5 | Current limiting for LEDs, 1/4W |
+| Resistor - 10kΩ | 2 | Pull-down for buttons and LDR, 1/4W |
+| Push Button | 3 | 6mm momentary switch |
 | DHT11 Sensor | 1 | Temperature & humidity combo |
 | Light Resistor (LDR) | 1 | Photoresistor, ~10kΩ typical |
 
@@ -40,4 +41,4 @@ Everything you need is in your kit!
 
 ---
 
-Questions about specific components? Check the [Glossary](/resources/glossary.md)!
+Questions about specific components? Check the [Glossary](./resources/glossary.md)!

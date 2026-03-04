@@ -19,13 +19,17 @@ This saves **30+ minutes during Workshop 1**, so we can spend more time actually
 
 ## Quick Learning Path
 
-**Start here →** [Electronics Basics 101](/0-pre-workshop/01-basics.md) (15 min read)
+**Start here →** [Electronics Basics 101](./01-basics.md) (15 min read)
 
-**Then →** [Arduino IDE Setup](/0-pre-workshop/02-arduino-setup.md) (10 min setup)
+**Then →** [Arduino IDE Setup](./02-arduino-setup.md) (10 min setup)
 
-**Finally →** [Homework Checklist](/0-pre-workshop/homework-checklist.md) (5 min verify)
+**Finally →** [Homework Checklist](./homework-checklist.md) (5 min verify)
 
 ---
 
-**Any questions?** Check [Troubleshooting](/resources/troubleshooting-master.md) or open an [Issue](https://github.com/zoharsf/embedded-electronics-101/issues)!
+**Any questions?** Check [Troubleshooting](../resources/troubleshooting-master.md) or open an [Issue](https://github.com/zoharsf/embedded-electronics-101/issues)!
+
+---
+
+**Next:** [Workshop 1: Basics & First Circuit](../1-workshop-1/README.md)
 

@@ -286,4 +286,4 @@ Press Ctrl+C to stop and save data.
 
 ---
 
-**Questions?** Check [Resources](/resources/) or open an [Issue](https://github.com/zoharsf/embedded-electronics-101/issues)!
+**Questions?** Check [Resources](../../resources/) or open an [Issue](https://github.com/zoharsf/embedded-electronics-101/issues)!

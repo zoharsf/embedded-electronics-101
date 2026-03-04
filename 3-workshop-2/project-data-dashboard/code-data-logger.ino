@@ -2,6 +2,11 @@
 // Workshop 2: Data Logger
 // Collect sensor data in CSV format
 // =====================================
+//
+// Hardware: 1x DHT11 sensor, 1x LDR + 1x 10k ohm resistor
+// Pins: GPIO 5 -> DHT11, GPIO 34 -> LDR (analog)
+// Libraries: DHT sensor library by Adafruit, Adafruit Unified Sensor
+// Companion: dashboard.py (Python visualization)
 
 #include <DHT.h>
 
