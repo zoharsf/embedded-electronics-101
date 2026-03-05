@@ -124,14 +124,14 @@ void loop() {
 
 For full step-by-step build instructions with breadboard layouts:
 
-- [Circuit diagram guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/1-workshop-1/circuit-diagram.md)
+- [Circuit diagram guide](1-workshop-1/circuit-diagram.md)
 - [LED blink code](https://github.com/zoharsf/embedded-electronics-101/blob/main/1-workshop-1/code-led-blink.ino)
 - [LED button code](https://github.com/zoharsf/embedded-electronics-101/blob/main/1-workshop-1/code-led-button.ino)
 
 ### Troubleshooting
 
 Common issues and solutions:
-[View Workshop 1 troubleshooting](https://github.com/zoharsf/embedded-electronics-101/blob/main/1-workshop-1/troubleshooting.md)
+[View Workshop 1 troubleshooting](1-workshop-1/troubleshooting.md)
 
 ## What's Next?
 

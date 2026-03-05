@@ -26,7 +26,7 @@ Serial.print(hum); Serial.print(",");
 Serial.println(light);
 ```
 
-[View full Sensor Logger guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/3-workshop-2/project-sensor-logger/README.md)
+[View full Sensor Logger guide](3-workshop-2/project-sensor-logger/README.md)
 
 ---
 
@@ -39,7 +39,7 @@ Create animated LED patterns with 3 LEDs. Use buttons to control modes and speed
 
 **Patterns include:** All Blink, Chase Sequence, Breathing Effect (PWM), Random Disco, Color Mixing
 
-[View full LED Light Show guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/3-workshop-2/project-led-patterns/README.md)
+[View full LED Light Show guide](3-workshop-2/project-led-patterns/README.md)
 
 ---
 
@@ -54,7 +54,7 @@ Build a reaction timer or Simon Says memory game with LEDs and buttons.
 1. **Reaction Timer** — LED lights up randomly, measure your response time
 2. **Memory Game** — Simon Says with LED sequences that get progressively longer
 
-[View full Button Game guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/3-workshop-2/project-button-game/README.md)
+[View full Button Game guide](3-workshop-2/project-button-game/README.md)
 
 ---
 
@@ -67,7 +67,7 @@ Build a Python dashboard that reads sensor data from ESP32 and creates live grap
 
 **Requires:** Python installed on your computer, plus `pyserial` and `matplotlib` libraries
 
-[View full Data Dashboard guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/3-workshop-2/project-data-dashboard/README.md)
+[View full Data Dashboard guide](3-workshop-2/project-data-dashboard/README.md)
 
 ---
 

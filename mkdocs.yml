@@ -49,17 +49,45 @@ theme:
 nav:
   - Home: index.md
   - Getting Started:
-      - Pre-Workshop Homework: pre-workshop.md
+      - Pre-Workshop Overview: pre-workshop.md
+      - Electronics Basics: 0-pre-workshop/01-basics.md
+      - Arduino Setup: 0-pre-workshop/02-arduino-setup.md
+      - Your First Sketch: 0-pre-workshop/03-first-sketch.md
+      - Homework Checklist: 0-pre-workshop/homework-checklist.md
   - Workshop 1:
       - Overview: workshop-1.md
+      - Circuit Diagram & Build Guide: 1-workshop-1/circuit-diagram.md
+      - Troubleshooting: 1-workshop-1/troubleshooting.md
+  - Inter-Workshop Homework:
+      - Overview: inter-workshop.md
+      - Sensor Basics: 2-inter-workshop/01-sensor-basics.md
+      - Code Tweaking: 2-inter-workshop/02-code-tweaking.md
+      - Project Picker: 2-inter-workshop/project-picker.md
   - Workshop 2:
-      - Inter-Workshop Homework: inter-workshop.md
-      - Workshop 2 Projects: workshop-2.md
+      - Overview: workshop-2.md
+      - Sensor Logger: 3-workshop-2/project-sensor-logger/README.md
+      - LED Light Show: 3-workshop-2/project-led-patterns/README.md
+      - Button Game: 3-workshop-2/project-button-game/README.md
+      - Data Dashboard: 3-workshop-2/project-data-dashboard/README.md
+  - Inter-Workshop 2 Homework:
+      - Overview: inter-workshop-2.md
+      - WiFi Basics: 4-inter-workshop/01-wifi-basics.md
+      - Bluetooth Basics: 4-inter-workshop/02-bluetooth-basics.md
+      - Web Server Basics: 4-inter-workshop/03-web-server-basics.md
+      - Project Picker: 4-inter-workshop/project-picker.md
   - Workshop 3:
-      - Inter-Workshop 2 Homework: inter-workshop-2.md
-      - IoT Projects: workshop-3.md
+      - Overview: workshop-3.md
+      - WiFi Weather Station: 5-workshop-3/project-wifi-weather/README.md
+      - Bluetooth Controller: 5-workshop-3/project-bluetooth-controller/README.md
+      - IoT Dashboard: 5-workshop-3/project-web-dashboard/README.md
+      - Troubleshooting: 5-workshop-3/troubleshooting.md
   - Resources:
-      - Learning Resources: resources.md
+      - Overview: resources.md
+      - Glossary: resources/glossary.md
+      - Component Datasheets: resources/component-datasheets.md
+      - Troubleshooting Master: resources/troubleshooting-master.md
+      - Video Playlist: resources/video-playlist.md
+      - Project Inspiration: resources/inspiration.md
 
 # Markdown extensions
 markdown_extensions:

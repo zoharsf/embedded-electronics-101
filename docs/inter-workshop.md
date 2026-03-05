@@ -55,7 +55,7 @@ int lightLevel = analogRead(34);  // Read light sensor
 Serial.println(lightLevel);       // 0 = dark, 4095 = bright
 ```
 
-[View full sensor basics guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/2-inter-workshop/01-sensor-basics.md)
+[View full sensor basics guide](2-inter-workshop/01-sensor-basics.md)
 
 ---
 
@@ -69,7 +69,7 @@ Get comfortable modifying existing code with these exercises:
 4. **Serial formatting** — output sensor data in CSV format
 5. **Combine sensors** — read both DHT11 and LDR in one sketch
 
-[View all code tweaking exercises with solutions](https://github.com/zoharsf/embedded-electronics-101/blob/main/2-inter-workshop/02-code-tweaking.md)
+[View all code tweaking exercises with solutions](2-inter-workshop/02-code-tweaking.md)
 
 ---
 
@@ -84,7 +84,7 @@ Choose which project you'll build in Workshop 2:
 | **Button Game** | Reaction timer or Simon Says | ⭐⭐⭐ |
 | **Data Dashboard** | Python visualization of sensor data | ⭐⭐⭐⭐ |
 
-[View detailed project picker guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/2-inter-workshop/project-picker.md)
+[View detailed project picker guide](2-inter-workshop/project-picker.md)
 
 ---
 

@@ -42,7 +42,7 @@ void setup() {
 }
 ```
 
-[View full WiFi basics guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/4-inter-workshop/01-wifi-basics.md)
+[View full WiFi basics guide](4-inter-workshop/01-wifi-basics.md)
 
 ---
 
@@ -74,7 +74,7 @@ void loop() {
 
 **To test:** Pair your phone, then use Serial Bluetooth Terminal app to send messages.
 
-[View full Bluetooth basics guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/4-inter-workshop/02-bluetooth-basics.md)
+[View full Bluetooth basics guide](4-inter-workshop/02-bluetooth-basics.md)
 
 ---
 
@@ -106,7 +106,7 @@ void loop() {
 
 Key concepts: routes map URLs to handler functions, JSON APIs enable dynamic updates, CSS makes dashboards look professional.
 
-[View full web server basics guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/4-inter-workshop/03-web-server-basics.md)
+[View full web server basics guide](4-inter-workshop/03-web-server-basics.md)
 
 ---
 
@@ -118,7 +118,7 @@ Key concepts: routes map URLs to handler functions, JSON APIs enable dynamic upd
 | **Bluetooth Controller** | Bluetooth Serial | ⭐⭐ |
 | **IoT Dashboard** | WiFi + Advanced Web UI + API | ⭐⭐⭐⭐ |
 
-[View detailed project picker guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/4-inter-workshop/project-picker.md)
+[View detailed project picker guide](4-inter-workshop/project-picker.md)
 
 ---
 

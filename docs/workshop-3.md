@@ -22,7 +22,7 @@ DHT11: VCC→3.3V, DATA→GPIO 5, GND→GND
 LDR:   3.3V→LDR→GPIO 34→10kΩ→GND
 ```
 
-[View WiFi Weather Station guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/5-workshop-3/project-wifi-weather/README.md)
+[View WiFi Weather Station guide](5-workshop-3/project-wifi-weather/README.md)
 
 ---
 
@@ -35,7 +35,7 @@ Control LEDs and read sensors from your phone using Bluetooth Serial commands.
 
 **Commands include:** LED on/off, blink patterns, temperature/humidity readings, status queries
 
-[View Bluetooth Controller guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/5-workshop-3/project-bluetooth-controller/README.md)
+[View Bluetooth Controller guide](5-workshop-3/project-bluetooth-controller/README.md)
 
 ---
 
@@ -48,7 +48,7 @@ Create a full-featured web dashboard with sensor monitoring, LED control, and a 
 
 **Features:** Temperature + humidity + light monitoring, LED control from browser, responsive mobile layout, JSON API for integration
 
-[View IoT Dashboard guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/5-workshop-3/project-web-dashboard/README.md)
+[View IoT Dashboard guide](5-workshop-3/project-web-dashboard/README.md)
 
 ---
 
@@ -71,7 +71,7 @@ Before starting Workshop 3:
 ## Troubleshooting
 
 Common WiFi, Bluetooth, and web server issues:
-[View Workshop 3 troubleshooting](https://github.com/zoharsf/embedded-electronics-101/blob/main/5-workshop-3/troubleshooting.md)
+[View Workshop 3 troubleshooting](5-workshop-3/troubleshooting.md)
 
 ## What's Next?
 

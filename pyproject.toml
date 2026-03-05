@@ -19,6 +19,9 @@ dev = [
 [tool.uv]
 dev-dependencies = []
 
+[tool.hatch.build.targets.wheel]
+packages = ["docs"]
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
