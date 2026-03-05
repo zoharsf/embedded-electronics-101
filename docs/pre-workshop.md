@@ -49,7 +49,7 @@ V = I × R
 1. **Polarity matters:** Long leg (+) goes to the GPIO pin side, short leg (-) goes to ground
 2. **Always use a resistor:** Without one, the LED draws too much current and burns out. Use 220Ω.
 
-[View full electronics basics guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/0-pre-workshop/01-basics.md)
+[View full electronics basics guide](0-pre-workshop/01-basics.md)
 
 ---
 
@@ -68,7 +68,7 @@ Set up your development environment:
 - Try a different USB port if the board isn't detected
 - On Windows, you may need to install CP2102 drivers
 
-[View detailed Arduino setup guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/0-pre-workshop/02-arduino-setup.md)
+[View detailed Arduino setup guide](0-pre-workshop/02-arduino-setup.md)
 
 ---
 
@@ -93,7 +93,7 @@ void loop() {
 - `loop()` — runs forever, over and over
 - `Serial.println()` — sends text to Serial Monitor for debugging
 
-[View first sketch tutorial](https://github.com/zoharsf/embedded-electronics-101/blob/main/0-pre-workshop/03-first-sketch.md)
+[View first sketch tutorial](0-pre-workshop/03-first-sketch.md)
 
 ---
 
@@ -104,7 +104,7 @@ void loop() {
 - [ ] ESP32 connected and recognized
 - [ ] (Optional) First sketch uploaded and running
 
-[View full homework checklist](https://github.com/zoharsf/embedded-electronics-101/blob/main/0-pre-workshop/homework-checklist.md)
+[View full homework checklist](0-pre-workshop/homework-checklist.md)
 
 ## Ready for Workshop 1?
 

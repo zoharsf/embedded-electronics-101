@@ -32,7 +32,7 @@ Technical specifications and wiring guides for all kit components.
 - Breadboard - 400 tie points
 - Jumper wires
 
-[View complete datasheets guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/resources/component-datasheets.md)
+[View complete datasheets guide](resources/component-datasheets.md)
 
 ---
 
@@ -49,7 +49,7 @@ Common electronics and programming terms explained simply.
 - **I2C** - Communication protocol for sensors
 - **Sketch** - Arduino program
 
-[View complete glossary](https://github.com/zoharsf/embedded-electronics-101/blob/main/resources/glossary.md)
+[View complete glossary](resources/glossary.md)
 
 ---
 
@@ -76,7 +76,7 @@ Solutions to common problems organized by category.
 - Bluetooth pairing fails
 - Web server not accessible
 
-[View complete troubleshooting guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/resources/troubleshooting-master.md)
+[View complete troubleshooting guide](resources/troubleshooting-master.md)
 
 ---
 
@@ -98,7 +98,7 @@ Visual learning resources and helpful YouTube channels.
 - Paul McWhorter's Arduino tutorials
 - DroneBot Workshop
 
-[View video playlist](https://github.com/zoharsf/embedded-electronics-101/blob/main/resources/video-playlist.md)
+[View video playlist](resources/video-playlist.md)
 
 ---
 
@@ -141,7 +141,7 @@ Visual learning resources and helpful YouTube channels.
 24. **Wearable Tech** - LED jewelry with patterns
 25. **Escape Room Puzzles** - Custom electronic challenges
 
-[View detailed project inspiration guide](https://github.com/zoharsf/embedded-electronics-101/blob/main/resources/inspiration.md)
+[View detailed project inspiration guide](resources/inspiration.md)
 
 ---
 

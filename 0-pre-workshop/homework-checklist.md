@@ -68,9 +68,9 @@ You now know:
 
 ## Still Stuck?
 
-- **Can't install Arduino IDE?** → [Troubleshooting](../resources/troubleshooting-master.md#setup-issues)
+- **Can't install Arduino IDE?** → [Troubleshooting](../resources/troubleshooting-master.md#setup-upload-issues)
 - **Don't understand a concept?** → [Glossary](../resources/glossary.md)
-- **Want more info?** → [Resources](../resources/)
+- **Want more info?** → [Resources](../resources/README.md)
 
 **See you at Workshop 1! 🚀**
 
