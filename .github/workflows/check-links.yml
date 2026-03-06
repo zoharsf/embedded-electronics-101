@@ -19,7 +19,7 @@ jobs:
             --verbose
             --no-progress
             --accept 200,204,301,302,403,429
-            --exclude-mail
+            --exclude '^mailto:'
             --exclude 'play\.google\.com'
             --exclude 'polyfill\.io'
             '**/*.md'

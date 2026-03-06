@@ -54,7 +54,7 @@ By the end of this workshop, you will:
 ## 📚 Projects for Today
 
 ### Project 1: WiFi Weather Station
-→ [WiFi Weather Station Guide](./project-wifi-weather/)
+→ [WiFi Weather Station Guide](./project-wifi-weather/README.md)
 
 **Features:**
 - Web-based dashboard
@@ -63,7 +63,7 @@ By the end of this workshop, you will:
 - Auto-refresh
 
 ### Project 2: Bluetooth Controller
-→ [Bluetooth Controller Guide](./project-bluetooth-controller/)
+→ [Bluetooth Controller Guide](./project-bluetooth-controller/README.md)
 
 **Features:**
 - Phone control via Bluetooth
@@ -72,7 +72,7 @@ By the end of this workshop, you will:
 - Status feedback
 
 ### Project 3: IoT Dashboard
-→ [IoT Dashboard Guide](./project-web-dashboard/)
+→ [IoT Dashboard Guide](./project-web-dashboard/README.md)
 
 **Features:**
 - Professional web interface

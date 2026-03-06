@@ -54,4 +54,4 @@ Full IoT dashboard with data logging, charts, and remote control.
 
 ---
 
-**Questions?** Check [Resources](../resources/) or open an [Issue](https://github.com/zoharsf/embedded-electronics-101/issues)!
+**Questions?** Check [Resources](../resources/README.md) or open an [Issue](https://github.com/zoharsf/embedded-electronics-101/issues)!
