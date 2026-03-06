@@ -202,4 +202,4 @@ We'll organize into 3 groups based on project choice:
 
 **Ready?** Remember your choice and see you at Workshop 3! 🚀
 
-**Questions?** Check [Resources](../resources/) or open an [Issue](https://github.com/zoharsf/embedded-electronics-101/issues)!
+**Questions?** Check [Resources](../resources/README.md) or open an [Issue](https://github.com/zoharsf/embedded-electronics-101/issues)!

@@ -63,7 +63,7 @@ You'll get **inter-workshop homework** to:
 - Pick which project you want to build in Workshop 2
 
 **Start here when you get it:**
-→ [Inter-Workshop Homework](../2-inter-workshop/)
+→ [Inter-Workshop Homework](../2-inter-workshop/README.md)
 
 ---
 
