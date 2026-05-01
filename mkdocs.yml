@@ -16,73 +16,97 @@ copyright: Copyright &copy; 2026 Zohar Fischer
 # Theme configuration
 theme:
   name: material
+  language: en
+  font:
+    text: Inter
+    code: JetBrains Mono
   palette:
-    # Light mode
-    - scheme: default
-      primary: indigo
-      accent: purple
+    # Dark mode is the default - boots into the polished look first.
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: amber
       toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    # Dark mode
-    - scheme: slate
-      primary: indigo
-      accent: purple
-      toggle:
-        icon: material/brightness-4
+        icon: material/weather-night
         name: Switch to light mode
+    # Light mode for those who prefer it.
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
   features:
-    - navigation.instant
+    # Note: navigation.instant is intentionally OFF because it's incompatible
+    # with the offline plugin. We prefer offline support (workshop resilience)
+    # over the SPA-like nav transition.
     - navigation.tracking
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
-    - navigation.expand
-    - navigation.top
+    - navigation.indexes        # README-as-section-landing
+    - navigation.path           # breadcrumb path at top
+    - navigation.top            # back-to-top button
+    - navigation.footer         # prev/next at page bottom
+    - toc.follow                # TOC follows scroll
     - search.suggest
     - search.highlight
+    - search.share
     - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
     - content.action.edit
+    - announce.dismiss
   icon:
     repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+  favicon: stylesheets/favicon.svg
+  logo: stylesheets/logo.svg
 
-# Navigation
+# Custom CSS for visual polish.
+extra_css:
+  - stylesheets/extra.css
+
+# Navigation - the workshop READMEs ARE the section landings (no duplicate overview pages).
 nav:
   - Home: index.md
-  - Getting Started:
-      - Pre-Workshop Overview: pre-workshop.md
+  - Pre-Workshop:
+      - 0-pre-workshop/README.md
       - Electronics Basics: 0-pre-workshop/01-basics.md
       - Arduino Setup: 0-pre-workshop/02-arduino-setup.md
       - Your First Sketch: 0-pre-workshop/03-first-sketch.md
       - Homework Checklist: 0-pre-workshop/homework-checklist.md
   - Workshop 1:
-      - Overview: workshop-1.md
+      - 1-workshop-1/README.md
       - Circuit Diagram & Build Guide: 1-workshop-1/circuit-diagram.md
       - Troubleshooting: 1-workshop-1/troubleshooting.md
-  - Inter-Workshop Homework:
-      - Overview: inter-workshop.md
+  - Inter-Workshop 1:
+      - 2-inter-workshop/README.md
       - Sensor Basics: 2-inter-workshop/01-sensor-basics.md
       - Code Tweaking: 2-inter-workshop/02-code-tweaking.md
       - Project Picker: 2-inter-workshop/project-picker.md
   - Workshop 2:
-      - Overview: workshop-2.md
+      - 3-workshop-2/README.md
       - Sensor Logger: 3-workshop-2/project-sensor-logger/README.md
       - LED Light Show: 3-workshop-2/project-led-patterns/README.md
       - Button Game: 3-workshop-2/project-button-game/README.md
       - Data Dashboard: 3-workshop-2/project-data-dashboard/README.md
-  - Inter-Workshop 2 Homework:
-      - Overview: inter-workshop-2.md
+  - Inter-Workshop 2:
+      - 4-inter-workshop/README.md
       - WiFi Basics: 4-inter-workshop/01-wifi-basics.md
       - Bluetooth Basics: 4-inter-workshop/02-bluetooth-basics.md
       - Web Server Basics: 4-inter-workshop/03-web-server-basics.md
       - Project Picker: 4-inter-workshop/project-picker.md
   - Workshop 3:
-      - Overview: workshop-3.md
+      - 5-workshop-3/README.md
       - WiFi Weather Station: 5-workshop-3/project-wifi-weather/README.md
       - Bluetooth Controller: 5-workshop-3/project-bluetooth-controller/README.md
       - IoT Dashboard: 5-workshop-3/project-web-dashboard/README.md
       - Troubleshooting: 5-workshop-3/troubleshooting.md
   - Resources:
-      - Overview: resources.md
+      - resources.md
       - Glossary: resources/glossary.md
       - Component Datasheets: resources/component-datasheets.md
       - Troubleshooting Master: resources/troubleshooting-master.md
@@ -98,8 +122,10 @@ markdown_extensions:
   - footnotes
   - meta
   - md_in_html
+  - tables
   - toc:
       permalink: true
+      permalink_title: Anchor link to this section
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.betterem:
@@ -138,6 +164,7 @@ plugins:
       lang: en
   - minify:
       minify_html: true
+  - offline                      # bundles assets locally so docs work without network
 
 # Extra
 extra:
@@ -147,10 +174,5 @@ extra:
       name: GitHub Repository
   generator: false
 
-# Extra CSS (optional)
-# extra_css:
-#   - stylesheets/extra.css
-
-# Extra JavaScript (optional)
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

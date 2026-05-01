@@ -1,114 +1,81 @@
-# 🔌 Embedded Electronics 101: ESP32 Workshop Series
+---
+hide:
+  - navigation
+  - toc
+---
 
-Welcome! This is your complete guide to learning embedded electronics with the ESP32 microcontroller. Whether you're a complete beginner or have some experience, these workshops will get you building cool stuff in no time.
+<div class="hero" markdown>
 
-## 🎯 What You'll Learn
+# Embedded Electronics 101
 
-- **Workshop 1:** Microcontroller basics, breadboards, LEDs, buttons, and your first interactive circuit
-- **Workshop 2:** Sensors, data reading, and building a complete project (4 options to choose from)
-- **Workshop 3:** WiFi connectivity, Bluetooth, web servers and IoT dashboards
-- **Beyond:** Ideas for many future projects to continue learning
+Three hands-on workshops. One ESP32 kit. From "I've never touched a wire" to a connected IoT dashboard you control from your phone.
 
-## 🚀 Quick Navigation
+<div class="hero-cta">
+[:material-rocket-launch: Start with the pre-workshop](0-pre-workshop/){ .md-button .md-button--primary }
+[:material-github: View on GitHub](https://github.com/zoharsf/embedded-electronics-101){ .md-button }
+</div>
 
-| I want to... | Go here |
-|---|---|
-| **Start from scratch** (new to electronics) | [Pre-Workshop Homework](pre-workshop.md) (30-45 min) |
-| **Prepare for Workshop 1** | [Pre-Workshop Homework](pre-workshop.md) |
-| **Review Workshop 1 materials** | [Workshop 1: Basics & First Circuit](workshop-1.md) |
-| **Get homework between workshops** | [Inter-Workshop Homework](inter-workshop.md) |
-| **Work on Workshop 2 projects** | [Workshop 2: Group Projects](workshop-2.md) |
-| **Prepare for Workshop 3** | [Inter-Workshop 2 Homework](inter-workshop-2.md) |
-| **Build connected IoT projects** | [Workshop 3: WiFi & Bluetooth](workshop-3.md) |
-| **Find project ideas** | [Project Inspiration](resources.md#project-inspiration) |
-| **Fix a problem** | [Troubleshooting Guide](resources.md#troubleshooting) |
-| **Learn more** | [Resources & Further Reading](resources.md) |
+</div>
 
-## 📚 The Complete Learning Path
+## How the series works
 
-**Total workshop time:** ~5 hours hands-on + 2 hours homework = **7 hours** to go from zero to building connected IoT projects!
+Each workshop is **1.5 hours** in person. Between workshops, light reading and a project pick (about **30-45 minutes** total) so we hit the ground running on the day.
 
-### Learning Progression
+<div class="workshop-grid" markdown>
 
-1. **[Pre-Workshop Homework](pre-workshop.md)** (30-45 min) - Get ready with Arduino Cloud setup and basic concepts
-2. **[Workshop 1: Basics & First Circuit](workshop-1.md)** (1.5 hrs) - Learn microcontroller basics, breadboards, LEDs and buttons
-3. **[Inter-Workshop Homework](inter-workshop.md)** (30-45 min) - Learn about sensors and prepare for Workshop 2
-4. **[Workshop 2: Group Projects](workshop-2.md)** (1.5 hrs) - Build one of 4 sensor-based projects
-5. **[Inter-Workshop 2 Homework](inter-workshop-2.md)** (45-60 min) - Learn WiFi, Bluetooth, and web server basics
-6. **[Workshop 3: WiFi & IoT](workshop-3.md)** (1.5-2 hrs) - Build connected IoT projects
-7. **Keep Building!** - Explore [25+ project ideas](resources.md#project-inspiration)
+<a class="workshop-card" href="0-pre-workshop/">
+  <span class="step">Step 0</span>
+  <h3>Pre-Workshop</h3>
+  <p>Set up Arduino IDE, learn what voltage / current / resistance actually mean, and watch four short videos. ~30 min at home.</p>
+</a>
 
-## 🛠️ Your Complete Kit
+<a class="workshop-card" href="1-workshop-1/">
+  <span class="step">Workshop 1</span>
+  <h3>First Circuit</h3>
+  <p>LED + button on a breadboard. Code it. Make it interactive. By the end you'll have toggled, debounced, and PWM'd your way around a GPIO pin.</p>
+</a>
 
-**Microcontroller & Power:**
-- 1x ESP32 Development Board (the brains!)
-- 1x USB-C Cable (power + programming)
+<a class="workshop-card" href="2-inter-workshop/">
+  <span class="step">Between 1 &amp; 2</span>
+  <h3>Sensor Basics</h3>
+  <p>Read about the DHT11 and the LDR, tweak some code samples, and pick which Workshop 2 project you want to build.</p>
+</a>
 
-**Building & Wiring:**
-- 1x Breadboard (400 pins)
-- Multiple Jumper Wires (male-to-male, various colors)
+<a class="workshop-card" href="3-workshop-2/">
+  <span class="step">Workshop 2</span>
+  <h3>Pick a Project</h3>
+  <p>Sensor logger, LED light show, button game, or live data dashboard. You build one in 90 minutes.</p>
+</a>
 
-**Outputs:**
-- 5x LEDs (Red, Green, Blue, Yellow, White)
-- 5x 220Ω Resistors (for LEDs)
+<a class="workshop-card" href="4-inter-workshop/">
+  <span class="step">Between 2 &amp; 3</span>
+  <h3>Going Wireless</h3>
+  <p>Quick reading on WiFi, Bluetooth, and web servers. Pick your final project.</p>
+</a>
 
-**Inputs:**
-- 3x Push Buttons
-- 1x DHT11 Temperature & Humidity Sensor
-- 1x LDR (Light Dependent Resistor)
-- 2x 10kΩ Resistors (for buttons and LDR)
+<a class="workshop-card" href="5-workshop-3/">
+  <span class="step">Workshop 3</span>
+  <h3>Connected IoT</h3>
+  <p>WiFi weather station, Bluetooth controller, or a full IoT dashboard - hosted right on your ESP32, accessed from your phone.</p>
+</a>
 
-**Total Value:** ~$25-30
+</div>
 
-## 🎓 Core Concepts You'll Master
+## What you'll have at the end
 
-- **Electronics Fundamentals:** Voltage, current, circuits, resistors
-- **Microcontroller Programming:** Arduino C/C++, digital I/O, analog reading
-- **Circuit Building:** Breadboarding, wiring, proper connections
-- **Sensor Integration:** Reading temperature, humidity, light levels
-- **User Interaction:** Buttons, LEDs, visual feedback
-- **IoT Connectivity:** WiFi, Bluetooth, web servers
-- **Data Visualization:** Serial output, web dashboards, graphs
-- **Debugging:** Troubleshooting hardware and software issues
+A working connected ESP32 project that runs from your breadboard, talks over your phone's hotspot, and serves a webpage you can open from any device on the network. The kit is yours to keep - extend the project at home, or jump into any of the [25+ project ideas](resources/inspiration.md) using the same parts.
 
-## 📖 About This Workshop Series
+## What's in the kit
 
-This workshop series is designed for:
-- **Absolute beginners** with no electronics or programming experience
-- **Students** interested in STEM fields
-- **Hobbyists** wanting to build IoT projects
-- **Educators** looking for structured curriculum
+Everything is in [`KIT_CONTENTS.md`](https://github.com/zoharsf/embedded-electronics-101/blob/main/KIT_CONTENTS.md): an ESP32 dev board, breadboard, jumpers, 5 LEDs, 3 buttons, a DHT11 sensor, a light sensor, and the resistors you need. Around $25-30 of parts, no soldering, you take it home.
 
-Each workshop includes:
-- ✅ Step-by-step instructions with screenshots
-- ✅ Complete working code examples
-- ✅ Circuit diagrams and wiring guides
-- ✅ Troubleshooting sections for common issues
-- ✅ Extension challenges for advanced learners
+## Getting unstuck
 
-## 🚀 Getting Started
-
-Ready to begin? Head to the [Pre-Workshop Homework](pre-workshop.md) to set up your development environment and learn the basics!
-
-## 📚 Additional Resources
-
-- [Component Datasheets](resources.md#datasheets) - Technical specifications for all components
-- [Glossary](resources.md#glossary) - Terms and definitions
-- [Video Tutorials](resources.md#videos) - Visual learning resources
-- [Project Inspiration](resources.md#project-inspiration) - 25+ ideas for your next project
-
-## 🤝 Questions or Issues?
-
-- Check the [Troubleshooting Guide](resources.md#troubleshooting) for common problems
-- Review the [Glossary](resources.md#glossary) for terminology
-- Explore the [Video Playlist](resources.md#videos) for visual explanations
-
-## 📄 License
-
-This curriculum is open source and available under the MIT License. Feel free to use, modify, and share!
+- [Workshop 1 troubleshooting](1-workshop-1/troubleshooting.md) - LED, button, upload issues.
+- [Workshop 3 troubleshooting](5-workshop-3/troubleshooting.md) - WiFi, hotspot, Bluetooth, web-server issues.
+- [Master troubleshooting guide](resources/troubleshooting-master.md) - everything in one searchable place.
+- [Glossary](resources/glossary.md) - every weird term in plain English.
 
 ---
 
-**Happy Building! 🎉**
-
-*Built with ❤️ for makers, learners, and tinkerers everywhere.*
+**License:** MIT. Use it, fork it, run your own workshops with it.
