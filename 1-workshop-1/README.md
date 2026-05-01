@@ -45,6 +45,17 @@ Complete kit with everything you need:
 - [Code: LED + Button (main project)](./code-led-button.ino)
 - [Troubleshooting Guide](./troubleshooting.md)
 
+## 🚀 Stretch Goals (if you finish early)
+
+If your circuit is working before the experiments block ends, pick one of these from inside `code-led-button.ino`:
+
+1. **Toggle-on-press** - one press = LED on, next press = LED off. (Detect the rising edge.)
+2. **Non-blocking blink** - the LED blinks at 2 Hz when idle, stays solid while button is held. No `delay()` allowed.
+3. **Press-duration brightness** - the longer you hold the button, the brighter the LED (uses LEDC PWM).
+4. **Debounce counter** - print a clean integer per physical press. Ten presses must print 1..10 exactly.
+
+Each one has an acceptance criterion at the bottom of the sketch. If your code does the thing, you're done - move to the next.
+
 ## 🚨 If Something Doesn't Work
 
 **First: Check the troubleshooting guide**

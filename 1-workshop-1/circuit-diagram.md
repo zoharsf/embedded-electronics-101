@@ -52,12 +52,12 @@ ESP32                    Breadboard
 
 ### Schematic Diagram
 
+We use the ESP32's **internal pull-down resistor** on the button input, so no external 10kΩ is needed. The button just connects GPIO 4 to 3.3V when pressed.
+
 ```
-                      ┌── [220Ω Resistor] ── LED(+) ──┐
-ESP32 Pin GPIO2 ──────┤                               │
-                      └───────────────────────────────┼─── GND
-                                                      │
-ESP32 Pin GPIO4 ─── [Button] ─── [10kΩ Resistor] ─────┘
+ESP32 GPIO 2  ─── [220Ω] ─── LED(+) ─── LED(-) ─── GND
+ESP32 GPIO 4  ─── [Button] ─── 3.3V
+                  (internal pull-down keeps GPIO 4 LOW when not pressed)
 ```
 
 ### Physical Build Instructions
@@ -68,12 +68,12 @@ ESP32 Pin GPIO4 ─── [Button] ─── [10kΩ Resistor] ─────┘
    - Place button across the center divide (pins in rows 15 & 17)
    - Buttons have 4 legs - two pairs are internally connected
 
-6. **Connect button to ESP32**
-   - Jumper wire: ESP32 GPIO4 pin → breadboard row 15, column F (button leg)
+6. **Connect button to ESP32 GPIO 4**
+   - Jumper wire: ESP32 GPIO 4 pin → breadboard row 15, column F (button leg)
 
-7. **Connect button to ground**
-   - Jumper wire: Breadboard row 17, column J → ESP32 GND pin
-   - (You can use the same GND rail/pin as the LED)
+7. **Connect button's other side to 3.3V** (not GND)
+   - Jumper wire: Breadboard row 17, column J → ESP32 **3.3V** pin
+   - (Sharing the 3.3V rail across the breadboard is fine)
 
 ### Pin Connection Summary Table
 
@@ -82,8 +82,8 @@ ESP32 Pin GPIO4 ─── [Button] ─── [10kΩ Resistor] ─────┘
 | LED Long Leg (+) | Via 220Ω resistor | GPIO 2 | Red |
 | LED Short Leg (-) | Direct | GND | Black |
 | Button Side 1 | Direct | GPIO 4 | Yellow/Green |
-| Button Side 2 | Direct | GND | Black |
-| Resistor (LED) | Between GPIO2 and LED+ | - | - |
+| Button Side 2 | Direct | **3.3V** | Red |
+| Resistor (LED) | Between GPIO 2 and LED+ | - | - |
 
 ### Complete Physical Layout
 
@@ -126,24 +126,10 @@ ESP32 Pin GPIO4 ─── [Button] ─── [10kΩ Resistor] ─────┘
 2. **GPIO2 goes LOW (0V)** → No current flow → LED is off
 
 ### Button Circuit
-1. **Button NOT pressed:** GPIO4 reads LOW (via pull-down resistor to GND)
-2. **Button IS pressed:** GPIO4 reads HIGH (button connects to 3.3V... wait, we need to update this!)
+1. **Button NOT pressed:** GPIO 4 reads LOW because the ESP32's internal pull-down resistor weakly ties the pin to GND.
+2. **Button IS pressed:** GPIO 4 reads HIGH because the button now connects it directly to 3.3V (which overrides the weak pull-down).
 
-**Important Note:** The circuit diagram above shows a simplified version. For a proper button circuit with ESP32, you should use the internal pull-down resistor in code:
-
-```cpp
-pinMode(BUTTON_PIN, INPUT_PULLDOWN);  // Use internal pull-down
-```
-
-This way, you don't need an external 10kΩ resistor!
-
-### Simplified Button Circuit (Recommended)
-
-```
-ESP32 Pin GPIO4 ─── [Button] ─── 3.3V
-                       │
-                      GND (when not pressed, internal pull-down)
-```
+The internal pull-down is enabled by `pinMode(BUTTON_PIN, INPUT_PULLDOWN);` - that's why we don't need an external 10kΩ resistor in this circuit.
 
 ---
 
@@ -159,7 +145,7 @@ ESP32 Pin GPIO4 ─── [Button] ─── 3.3V
 
 ### ❌ Button doesn't work
 - **Check:** Button is across the breadboard center divide
-- **Check:** One button leg goes to GPIO4, other to GND
+- **Check:** One button leg goes to GPIO 4, the other to **3.3V** (not GND - the code uses `INPUT_PULLDOWN`)
 - **Check:** Code has `pinMode(BUTTON_PIN, INPUT_PULLDOWN);`
 
 ### ❌ LED lights up backwards (on when button released)
