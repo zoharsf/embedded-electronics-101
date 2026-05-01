@@ -71,7 +71,7 @@ If your project lights up early, head straight to the stretch goals in your proj
 
 A clean web dashboard showing live temperature, humidity, and light. Mobile-friendly. Updates every 5 seconds.
 
-### Project 2: Bluetooth Controller (Android only)
+### Project 2: Bluetooth Controller
 → [Bluetooth Controller Guide](./project-bluetooth-controller/README.md)
 
 Type commands like `RED:ON` or `TEMP` from your phone over Bluetooth. The ESP32 responds with confirmations and sensor readings.

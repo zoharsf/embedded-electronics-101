@@ -161,4 +161,4 @@ For anything else, see [the Workshop 2 troubleshooting tips](../README.md) or th
 
 ---
 
-**Questions?** Open an [Issue](https://github.com/zoharsf/embedded-electronics-101/issues).
+**Questions?** Check [Resources](../../resources/README.md) or open an [Issue](https://github.com/zoharsf/embedded-electronics-101/issues)!
