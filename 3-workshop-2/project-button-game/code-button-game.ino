@@ -3,48 +3,43 @@
 // Test your reflexes and memory!
 // =====================================
 //
-// Hardware: 4x LEDs + 4x 220 ohm resistors + 4x push buttons
-// Pins: GPIO 2,4,5,12 -> LEDs, GPIO 18,19,21,22 -> buttons
+// Hardware: 3x LEDs + 3x 220 ohm resistors + 3x push buttons
+// Pins: GPIO 2,4,5 -> LEDs (red, green, blue)
+//       GPIO 18,19,21 -> buttons (matched to LEDs)
 // Libraries: None (built-in only)
 
 // ===== PIN DEFINITIONS =====
-const int LED_PINS[] = {2, 4, 5, 12};       // LED pins
-const int BUTTON_PINS[] = {18, 19, 21, 22}; // Button pins
-const int NUM_LEDS = 4;
+const int LED_PINS[]    = {2, 4, 5};      // Red, Green, Blue
+const int BUTTON_PINS[] = {18, 19, 21};   // One per LED
+const int NUM_LEDS = 3;
+
+// Button 0 (GPIO 18) doubles as the "switch mode" button between rounds.
 
 // ===== GAME VARIABLES =====
-int gameMode = 1;           // 1 = Reaction Timer, 2 = Memory Game
-int sequence[50];           // Memory game sequence storage
-int sequenceLength = 0;     // Current sequence length
-int currentRound = 1;       // Current round number
-unsigned long reactionTime; // Reaction time in ms
-unsigned long bestTime = 999999; // Best reaction time
+int gameMode = 1;                  // 1 = Reaction Timer, 2 = Memory Game
+int sequence[64];                  // Memory game sequence storage
+int sequenceLength = 0;
+int currentRound = 1;
+unsigned long reactionTime = 0;
+unsigned long bestTime = 999999;
 
 // ===== SETUP =====
 void setup() {
   Serial.begin(9600);
-  randomSeed(analogRead(0));  // Seed random number generator
-  
-  // Configure LED pins
+  randomSeed(analogRead(0));
+
   for (int i = 0; i < NUM_LEDS; i++) {
     pinMode(LED_PINS[i], OUTPUT);
-  }
-  
-  // Configure button pins
-  for (int i = 0; i < NUM_LEDS; i++) {
     pinMode(BUTTON_PINS[i], INPUT_PULLDOWN);
   }
-  
+
   Serial.println("=== BUTTON GAME ===");
-  Serial.println("Get ready!");
-  
-  // Startup animation
   startupAnimation();
-  
-  Serial.println("\nMODE 1: Reaction Timer");
-  Serial.println("Press the button that lights up as fast as you can!\n");
-  
-  delay(2000);
+
+  Serial.println("MODE 1: Reaction Timer");
+  Serial.println("Press the button under the LED that lights up - as fast as you can!");
+  Serial.println("Hold Button 1 (red) at any game-over to switch to Memory Mode.\n");
+  delay(1500);
 }
 
 // ===== MAIN LOOP =====
@@ -58,80 +53,67 @@ void loop() {
 
 // ===== STARTUP ANIMATION =====
 void startupAnimation() {
-  // Chase pattern
   for (int i = 0; i < NUM_LEDS; i++) {
     digitalWrite(LED_PINS[i], HIGH);
-    delay(100);
+    delay(120);
     digitalWrite(LED_PINS[i], LOW);
   }
-  
-  // All blink
   for (int j = 0; j < 3; j++) {
     allLEDs(HIGH);
-    delay(200);
+    delay(150);
     allLEDs(LOW);
-    delay(200);
+    delay(150);
   }
 }
 
 // ===== MODE 1: REACTION TIMER =====
 void reactionMode() {
-  // Random delay before LED lights up
   delay(random(1000, 3000));
-  
-  // Pick random LED
+
   int targetLED = random(0, NUM_LEDS);
-  
-  // Light it up and start timer
   digitalWrite(LED_PINS[targetLED], HIGH);
   unsigned long startTime = millis();
-  
-  // Wait for correct button press
-  bool buttonPressed = false;
-  while (!buttonPressed) {
+
+  while (true) {
+    // Correct button
     if (digitalRead(BUTTON_PINS[targetLED]) == HIGH) {
-      buttonPressed = true;
       reactionTime = millis() - startTime;
-      
-      // Turn off LED
       digitalWrite(LED_PINS[targetLED], LOW);
-      
-      // Display result
+
       Serial.print("Reaction time: ");
       Serial.print(reactionTime);
       Serial.println(" ms");
-      
-      // Feedback
-      if (reactionTime < 200) {
-        Serial.println("AMAZING! 🚀");
-      } else if (reactionTime < 400) {
-        Serial.println("Great! 😎");
-      } else if (reactionTime < 600) {
-        Serial.println("Good! 👍");
-      } else {
-        Serial.println("Keep trying! 💪");
-      }
-      
-      // Check for best time
+
+      if (reactionTime < 200)      Serial.println("AMAZING!");
+      else if (reactionTime < 400) Serial.println("Great!");
+      else if (reactionTime < 600) Serial.println("Good!");
+      else                         Serial.println("Keep trying!");
+
       if (reactionTime < bestTime) {
         bestTime = reactionTime;
         Serial.print("NEW BEST TIME: ");
         Serial.print(bestTime);
-        Serial.println(" ms!");
+        Serial.println(" ms");
       }
-      
       Serial.println();
-      delay(1000);
+
+      // Offer mode switch on a long-hold of button 0
+      if (waitForRelease(targetLED, 800)) {
+        Serial.println("Switching to MEMORY MODE...\n");
+        gameMode = 2;
+      }
+      delay(700);
+      return;
     }
-    
-    // Check if wrong button pressed
+
+    // Wrong button
     for (int i = 0; i < NUM_LEDS; i++) {
       if (i != targetLED && digitalRead(BUTTON_PINS[i]) == HIGH) {
         Serial.println("Wrong button! Try again.");
         digitalWrite(LED_PINS[targetLED], LOW);
-        delay(500);
+        delay(400);
         digitalWrite(LED_PINS[targetLED], HIGH);
-        delay(100);
+        delay(80);
       }
     }
   }
@@ -140,125 +122,119 @@ void reactionMode() {
 // ===== MODE 2: MEMORY GAME (SIMON-SAYS) =====
 void memoryMode() {
   Serial.println("=== MEMORY GAME ===");
-  Serial.println("Watch and repeat the pattern!\n");
-  
+  Serial.println("Watch the sequence, then press the buttons in order.\n");
+
   currentRound = 1;
   sequenceLength = 0;
-  
+
   while (true) {
     Serial.print("Round ");
     Serial.println(currentRound);
-    
-    // Add new LED to sequence
-    sequence[sequenceLength] = random(0, NUM_LEDS);
-    sequenceLength++;
-    
-    // Show sequence
-    delay(1000);
+
+    sequence[sequenceLength++] = random(0, NUM_LEDS);
+
+    delay(800);
     showSequence();
-    
-    // Wait for player input
+
     Serial.println("Your turn!");
     if (!checkPlayerInput()) {
-      // Game over
-      Serial.println("\n❌ WRONG! Game Over!");
+      Serial.println("\nWRONG! Game Over.");
       Serial.print("Final Score: ");
       Serial.print(currentRound - 1);
       Serial.println(" rounds");
-      
-      // Game over animation
+
       gameOverAnimation();
-      
-      delay(3000);
-      Serial.println("\nRestarting...\n");
-      return;  // Restart game
+      delay(2000);
+
+      // Hold button 0 (red) during this window to flip back to Reaction Mode.
+      Serial.println("Hold the RED button now to switch back to Reaction Mode...");
+      unsigned long holdStart = millis();
+      while (millis() - holdStart < 2000) {
+        if (digitalRead(BUTTON_PINS[0]) == HIGH) {
+          Serial.println("Switching to REACTION MODE...\n");
+          gameMode = 1;
+          return;
+        }
+      }
+      Serial.println("Restarting Memory Mode...\n");
+      return;
     }
-    
-    // Success!
-    Serial.println("✅ Correct!\n");
+
+    Serial.println("Correct!\n");
     successAnimation();
     currentRound++;
-    delay(1500);
+    delay(1200);
   }
 }
 
-// ===== SHOW LED SEQUENCE =====
 void showSequence() {
   int delayTime = 500;
-  
-  // Speed up after round 4
-  if (currentRound > 4) delayTime = 300;
-  if (currentRound > 7) delayTime = 200;
-  
+  if (currentRound > 4) delayTime = 350;
+  if (currentRound > 7) delayTime = 220;
+
   for (int i = 0; i < sequenceLength; i++) {
     digitalWrite(LED_PINS[sequence[i]], HIGH);
     delay(delayTime);
     digitalWrite(LED_PINS[sequence[i]], LOW);
-    delay(200);
+    delay(180);
   }
 }
 
-// ===== CHECK PLAYER INPUT =====
 bool checkPlayerInput() {
   for (int i = 0; i < sequenceLength; i++) {
-    // Wait for button press
-    bool buttonPressed = false;
-    while (!buttonPressed) {
+    while (true) {
       for (int j = 0; j < NUM_LEDS; j++) {
         if (digitalRead(BUTTON_PINS[j]) == HIGH) {
-          // Button pressed - light up LED
           digitalWrite(LED_PINS[j], HIGH);
-          delay(300);
+          delay(250);
           digitalWrite(LED_PINS[j], LOW);
-          
-          // Check if correct
-          if (j != sequence[i]) {
-            return false;  // Wrong button!
-          }
-          
-          buttonPressed = true;
-          
-          // Debounce
-          while (digitalRead(BUTTON_PINS[j]) == HIGH) {
-            delay(10);
-          }
-          delay(100);
-          break;
+
+          if (j != sequence[i]) return false;
+
+          // wait for release
+          while (digitalRead(BUTTON_PINS[j]) == HIGH) delay(10);
+          delay(80);
+          goto next;
         }
       }
     }
+    next: ;
   }
-  return true;  // All correct!
+  return true;
 }
 
-// ===== ANIMATIONS =====
+// ===== HELPERS =====
 void successAnimation() {
   for (int i = 0; i < 2; i++) {
-    allLEDs(HIGH);
-    delay(100);
-    allLEDs(LOW);
-    delay(100);
+    allLEDs(HIGH); delay(120);
+    allLEDs(LOW);  delay(120);
   }
 }
 
 void gameOverAnimation() {
   for (int i = 0; i < 3; i++) {
-    allLEDs(HIGH);
-    delay(200);
-    allLEDs(LOW);
-    delay(200);
+    allLEDs(HIGH); delay(220);
+    allLEDs(LOW);  delay(220);
   }
 }
 
 void allLEDs(int state) {
-  for (int i = 0; i < NUM_LEDS; i++) {
-    digitalWrite(LED_PINS[i], state);
+  for (int i = 0; i < NUM_LEDS; i++) digitalWrite(LED_PINS[i], state);
+}
+
+// Returns true if the given button was held for `holdMs` after pressing.
+bool waitForRelease(int idx, unsigned long holdMs) {
+  unsigned long pressedAt = millis();
+  bool stillHeld = false;
+  while (digitalRead(BUTTON_PINS[idx]) == HIGH) {
+    if (millis() - pressedAt > holdMs) stillHeld = true;
+    delay(10);
   }
+  return stillHeld;
 }
 
 // ===== TRY THIS =====
-// 1. Add Mode 3: Speed Round (as many correct presses in 30 seconds)
-// 2. Add difficulty selector at startup
-// 3. Save high scores to EEPROM
-// 4. Add multiplayer mode (2 players alternate)
-// 5. Add sound effects using a buzzer
+// 1. Speed Round mode: count correct presses in 30 seconds.
+// 2. Difficulty selector at startup (read which button is held during boot).
+// 3. Persist best time across reboots using Preferences.h.
+// 4. Two-player alternating mode with separate scores.

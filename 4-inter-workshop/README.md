@@ -10,6 +10,7 @@ Workshop 3 introduces **connectivity** - WiFi, Bluetooth, and web servers. This 
    - How ESP32 connects to WiFi
    - Network scanning and connection
    - IP addresses and clients
+   - **Note:** in Workshop 3 we'll use *your phone's hotspot*, not office or home WiFi - sidesteps every corporate network problem.
 
 2. **Bluetooth Basics** (15 min read)
    - Bluetooth Classic vs BLE

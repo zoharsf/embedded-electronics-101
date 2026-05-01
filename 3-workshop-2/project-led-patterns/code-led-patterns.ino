@@ -23,86 +23,79 @@ int delayTime = 500;           // Milliseconds between steps
 bool lastModeButtonState = LOW;
 bool lastSpeedButtonState = LOW;
 
+// ===== PWM CONFIG =====
+// On ESP32 Arduino core 3.x, analogWrite() was removed and PWM moved to
+// the LEDC API. We attach each LED pin to a PWM channel at 5 kHz, 8-bit
+// resolution. ledcWrite(pin, 0..255) replaces both analogWrite and
+// digitalWrite for these pins (255 = fully on, 0 = off).
+const int PWM_FREQ_HZ = 5000;
+const int PWM_RES_BITS = 8;
+const int LED_ON  = 255;
+const int LED_OFF = 0;
+
+// Helper: write any value 0..255 to one of our LEDs.
+inline void ledWrite(int pin, int value) { ledcWrite(pin, value); }
+
 // ===== SETUP =====
 void setup() {
   Serial.begin(9600);
-  
-  // Configure LED pins as outputs
-  pinMode(LED_RED, OUTPUT);
-  pinMode(LED_GREEN, OUTPUT);
-  pinMode(LED_BLUE, OUTPUT);
-  
-  // Configure button pins as inputs with pull-down resistors
+
+  // Attach each LED pin to a PWM channel.
+  ledcAttach(LED_RED,   PWM_FREQ_HZ, PWM_RES_BITS);
+  ledcAttach(LED_GREEN, PWM_FREQ_HZ, PWM_RES_BITS);
+  ledcAttach(LED_BLUE,  PWM_FREQ_HZ, PWM_RES_BITS);
+
+  // Buttons use the ESP32 internal pull-down.
   pinMode(BUTTON_MODE, INPUT_PULLDOWN);
   pinMode(BUTTON_SPEED, INPUT_PULLDOWN);
-  
+
   Serial.println("=== LED Light Show ===");
-  Serial.println("Button 1: Change Pattern");
-  Serial.println("Button 2: Change Speed");
-  Serial.println("");
+  Serial.println("Button 1 (GPIO 18): change pattern");
+  Serial.println("Button 2 (GPIO 19): change speed");
+  Serial.println();
 }
 
 // ===== MAIN LOOP =====
 void loop() {
-  // Check for button presses
   checkButtons();
-  
-  // Run the current pattern
+
   switch (currentPattern) {
-    case 1:
-      patternAllBlink();
-      break;
-    case 2:
-      patternChase();
-      break;
-    case 3:
-      patternBreathing();
-      break;
-    case 4:
-      patternRandom();
-      break;
-    case 5:
-      patternColorMix();
-      break;
+    case 1: patternAllBlink();  break;
+    case 2: patternChase();     break;
+    case 3: patternBreathing(); break;
+    case 4: patternRandom();    break;
+    case 5: patternColorMix();  break;
   }
 }
 
 // ===== BUTTON HANDLING =====
 void checkButtons() {
-  // Read button states
-  bool modeButtonState = digitalRead(BUTTON_MODE);
+  bool modeButtonState  = digitalRead(BUTTON_MODE);
   bool speedButtonState = digitalRead(BUTTON_SPEED);
-  
-  // Mode button pressed (with simple debouncing)
+
+  // Mode button - rising-edge detect
   if (modeButtonState == HIGH && lastModeButtonState == LOW) {
     currentPattern++;
     if (currentPattern > 5) currentPattern = 1;
-    
-    Serial.print("Pattern changed to: ");
+    Serial.print("Pattern: ");
     Serial.println(currentPattern);
-    
-    // Turn off all LEDs when switching patterns
     allOff();
-    delay(200);  // Debounce delay
+    delay(200);  // basic debounce
   }
-  
-  // Speed button pressed (with simple debouncing)
+
+  // Speed button - rising-edge detect
   if (speedButtonState == HIGH && lastSpeedButtonState == LOW) {
     speedLevel++;
     if (speedLevel > 3) speedLevel = 1;
-    
-    // Update delay time based on speed level
-    if (speedLevel == 1) delayTime = 1000;      // Slow
-    else if (speedLevel == 2) delayTime = 500;  // Medium
-    else delayTime = 200;                        // Fast
-    
-    Serial.print("Speed changed to: ");
+    if      (speedLevel == 1) delayTime = 1000;
+    else if (speedLevel == 2) delayTime = 500;
+    else                      delayTime = 200;
+    Serial.print("Speed: ");
     Serial.println(speedLevel);
-    delay(200);  // Debounce delay
+    delay(200);
   }
-  
-  // Remember button states
-  lastModeButtonState = modeButtonState;
+
+  lastModeButtonState  = modeButtonState;
   lastSpeedButtonState = speedButtonState;
 }
 
@@ -116,95 +109,66 @@ void patternAllBlink() {
 
 // ===== PATTERN 2: CHASE SEQUENCE =====
 void patternChase() {
-  // Red
-  digitalWrite(LED_RED, HIGH);
-  digitalWrite(LED_GREEN, LOW);
-  digitalWrite(LED_BLUE, LOW);
+  ledWrite(LED_RED, LED_ON);   ledWrite(LED_GREEN, LED_OFF); ledWrite(LED_BLUE, LED_OFF);
   delay(delayTime);
-  
-  // Green
-  digitalWrite(LED_RED, LOW);
-  digitalWrite(LED_GREEN, HIGH);
-  digitalWrite(LED_BLUE, LOW);
+  ledWrite(LED_RED, LED_OFF);  ledWrite(LED_GREEN, LED_ON);  ledWrite(LED_BLUE, LED_OFF);
   delay(delayTime);
-  
-  // Blue
-  digitalWrite(LED_RED, LOW);
-  digitalWrite(LED_GREEN, LOW);
-  digitalWrite(LED_BLUE, HIGH);
+  ledWrite(LED_RED, LED_OFF);  ledWrite(LED_GREEN, LED_OFF); ledWrite(LED_BLUE, LED_ON);
   delay(delayTime);
 }
 
 // ===== PATTERN 3: BREATHING EFFECT (PWM) =====
 void patternBreathing() {
-  // Fade up
-  for (int brightness = 0; brightness <= 255; brightness += 5) {
-    analogWrite(LED_RED, brightness);
-    analogWrite(LED_GREEN, brightness);
-    analogWrite(LED_BLUE, brightness);
+  for (int b = 0; b <= 255; b += 5) {
+    ledWrite(LED_RED, b); ledWrite(LED_GREEN, b); ledWrite(LED_BLUE, b);
     delay(delayTime / 50);
   }
-  
-  // Fade down
-  for (int brightness = 255; brightness >= 0; brightness -= 5) {
-    analogWrite(LED_RED, brightness);
-    analogWrite(LED_GREEN, brightness);
-    analogWrite(LED_BLUE, brightness);
+  for (int b = 255; b >= 0; b -= 5) {
+    ledWrite(LED_RED, b); ledWrite(LED_GREEN, b); ledWrite(LED_BLUE, b);
     delay(delayTime / 50);
   }
 }
 
 // ===== PATTERN 4: RANDOM DISCO =====
 void patternRandom() {
-  // Random combination of LEDs
-  digitalWrite(LED_RED, random(0, 2));    // 0 or 1
-  digitalWrite(LED_GREEN, random(0, 2));
-  digitalWrite(LED_BLUE, random(0, 2));
+  ledWrite(LED_RED,   random(0, 2) ? LED_ON : LED_OFF);
+  ledWrite(LED_GREEN, random(0, 2) ? LED_ON : LED_OFF);
+  ledWrite(LED_BLUE,  random(0, 2) ? LED_ON : LED_OFF);
   delay(delayTime);
 }
 
 // ===== PATTERN 5: COLOR MIXING =====
 void patternColorMix() {
-  // Red + Green = Yellow
-  digitalWrite(LED_RED, HIGH);
-  digitalWrite(LED_GREEN, HIGH);
-  digitalWrite(LED_BLUE, LOW);
+  // Yellow = Red + Green
+  ledWrite(LED_RED, LED_ON);  ledWrite(LED_GREEN, LED_ON);  ledWrite(LED_BLUE, LED_OFF);
   delay(delayTime);
-  
-  // Green + Blue = Cyan
-  digitalWrite(LED_RED, LOW);
-  digitalWrite(LED_GREEN, HIGH);
-  digitalWrite(LED_BLUE, HIGH);
+  // Cyan = Green + Blue
+  ledWrite(LED_RED, LED_OFF); ledWrite(LED_GREEN, LED_ON);  ledWrite(LED_BLUE, LED_ON);
   delay(delayTime);
-  
-  // Red + Blue = Magenta
-  digitalWrite(LED_RED, HIGH);
-  digitalWrite(LED_GREEN, LOW);
-  digitalWrite(LED_BLUE, HIGH);
+  // Magenta = Red + Blue
+  ledWrite(LED_RED, LED_ON);  ledWrite(LED_GREEN, LED_OFF); ledWrite(LED_BLUE, LED_ON);
   delay(delayTime);
-  
-  // All on = White
-  digitalWrite(LED_RED, HIGH);
-  digitalWrite(LED_GREEN, HIGH);
-  digitalWrite(LED_BLUE, HIGH);
+  // White = all
+  ledWrite(LED_RED, LED_ON);  ledWrite(LED_GREEN, LED_ON);  ledWrite(LED_BLUE, LED_ON);
   delay(delayTime);
 }
 
-// ===== HELPER FUNCTIONS =====
+// ===== HELPERS =====
 void allOn() {
-  digitalWrite(LED_RED, HIGH);
-  digitalWrite(LED_GREEN, HIGH);
-  digitalWrite(LED_BLUE, HIGH);
+  ledWrite(LED_RED, LED_ON);
+  ledWrite(LED_GREEN, LED_ON);
+  ledWrite(LED_BLUE, LED_ON);
 }
 
 void allOff() {
-  digitalWrite(LED_RED, LOW);
-  digitalWrite(LED_GREEN, LOW);
-  digitalWrite(LED_BLUE, LOW);
+  ledWrite(LED_RED, LED_OFF);
+  ledWrite(LED_GREEN, LED_OFF);
+  ledWrite(LED_BLUE, LED_OFF);
 }
 
 // ===== TRY THIS =====
-// 1. Add Pattern 6: Your own custom pattern!
-// 2. Make patterns speed up over time
-// 3. Add a "reverse" button to run patterns backwards
-// 4. Combine patterns (e.g., chase + breathing)
+// 1. Add Pattern 6: your own custom pattern.
+// 2. Make patterns speed up over time (decay delayTime in loop).
+// 3. Add a "reverse" feature so chase runs backwards.
+// 4. Combine patterns (chase with breathing instead of solid on).
+// 5. Smooth color crossfade: interpolate between two colors using ledcWrite.

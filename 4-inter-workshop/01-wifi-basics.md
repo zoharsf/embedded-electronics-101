@@ -20,7 +20,7 @@ WiFi is a **wireless networking technology** that lets devices communicate over 
 2. **Access Point Mode (AP):** ESP32 creates its own WiFi network
 3. **Both:** Can do both simultaneously!
 
-**For Workshop 3, we'll use Station Mode** (connecting to your home WiFi)
+**For Workshop 3, we'll use Station Mode** - and the "WiFi network" will be **your own phone's hotspot**, not your home or office network. Each participant turns on a 2.4 GHz hotspot, the ESP32 joins it, and you access the ESP32 from the same phone. This avoids every corporate-network and home-router headache.
 
 ---
 
@@ -150,16 +150,19 @@ void setup() {
 
 ## WiFi Events (Advanced)
 
-ESP32 can react to WiFi events:
+ESP32 can react to WiFi events. On Arduino-ESP32 core 3.x the event names are
+`ARDUINO_EVENT_WIFI_STA_*` (the older `SYSTEM_EVENT_STA_*` names were removed):
 
 ```cpp
 void WiFiEvent(WiFiEvent_t event) {
-  switch(event) {
-    case SYSTEM_EVENT_STA_GOT_IP:
+  switch (event) {
+    case ARDUINO_EVENT_WIFI_STA_GOT_IP:
       Serial.println("Connected! IP: " + WiFi.localIP().toString());
       break;
-    case SYSTEM_EVENT_STA_DISCONNECTED:
+    case ARDUINO_EVENT_WIFI_STA_DISCONNECTED:
       Serial.println("Disconnected!");
+      break;
+    default:
       break;
   }
 }
@@ -232,12 +235,11 @@ Once connected, your ESP32 can:
 
 ---
 
-## Try This Before Workshop 3
+## You Don't Need to Test Anything Before Workshop 3
 
-1. **Modify the connection code** to use your home WiFi
-2. **Upload and test** - does it connect?
-3. **Note your ESP32's IP address** - you'll need it!
-4. **Try the network scanner** - how many networks do you see?
+In the workshop we'll use your phone's hotspot, not your home network, so there's nothing you need to wire up at home. Just read this page and you're set.
+
+If you're curious and want to play, the Hardware Setup in [project-wifi-weather/README.md](../5-workshop-3/project-wifi-weather/README.md) shows the full circuit and the hotspot setup steps.
 
 ---
 

@@ -1,19 +1,22 @@
-# 📊 Project 3: IoT Dashboard
+# Project 3: IoT Dashboard
 
 ## What You'll Build
 
-A full-featured web dashboard with real-time charts, LED control, and a JSON API — all served from your ESP32. This is the most advanced Workshop 3 project!
+A full-featured web dashboard with sensor cards, LED toggle buttons, and a JSON API - all served from your ESP32. Most "real-app" feel of the three Workshop 3 projects.
 
-**Access from:** Phone, tablet, computer — anything with a browser on the same network.
+You will:
+1. Turn your phone into a 2.4 GHz hotspot.
+2. Have the ESP32 join the hotspot.
+3. Open the dashboard in your phone's browser and toggle physical LEDs from the page.
 
 ---
 
 ## Hardware Setup
 
-### Components Needed
+### Components Needed (all in your kit)
 - 1x DHT11 sensor (temperature & humidity)
 - 1x LDR (light sensor)
-- 1x 10kΩ resistor (for LDR voltage divider)
+- 1x 10kΩ resistor (LDR voltage divider)
 - 2x LEDs (red, green)
 - 2x 220Ω resistors
 - Jumper wires
@@ -22,14 +25,14 @@ A full-featured web dashboard with real-time charts, LED control, and a JSON API
 
 | Component | ESP32 Pin | Notes |
 |-----------|-----------|-------|
-| DHT11 VCC | 3.3V | Power |
-| DHT11 DATA | GPIO 5 | Signal |
-| DHT11 GND | GND | Ground |
-| LDR one end | 3.3V | Voltage divider |
-| LDR other end | GPIO 34 | Analog input |
-| 10kΩ resistor | GPIO 34 to GND | Pull-down |
-| Red LED (+) | GPIO 25 | Through 220Ω resistor to GND |
-| Green LED (+) | GPIO 26 | Through 220Ω resistor to GND |
+| DHT11 VCC  | 3.3V    | Power |
+| DHT11 DATA | GPIO 5  | Signal |
+| DHT11 GND  | GND     | Ground |
+| LDR leg 1  | 3.3V    | Voltage divider top |
+| LDR leg 2 + 10kΩ | GPIO 34 | Junction = analog input |
+| 10kΩ other end | GND | Voltage divider bottom |
+| Red LED (+) | GPIO 25 | Via 220Ω to GND |
+| Green LED (+) | GPIO 26 | Via 220Ω to GND |
 
 ### Breadboard Layout
 
@@ -42,111 +45,102 @@ GND     ──── DHT11 GND
 3.3V    ──── LDR ──┬── GPIO 34 (analog)
                     └── [10kΩ] ── GND
 
-GPIO 25 ──── [220Ω] ──── LED Red (+) ──── GND
-GPIO 26 ──── [220Ω] ──── LED Green (+) ── GND
+GPIO 25 ──── [220Ω] ──── Red LED (+) ──── GND
+GPIO 26 ──── [220Ω] ──── Green LED (+) ── GND
 ```
 
 ---
 
 ## Step-by-Step Build
 
-### Step 1: Build the Circuit (15 min)
+### Step 1: Build the circuit (12 min)
+1. DHT11 in place: VCC, DATA, GND.
+2. LDR voltage divider with the 10kΩ.
+3. Two LEDs each with a 220Ω resistor in series.
 
-1. Connect DHT11 sensor (VCC → 3.3V, DATA → GPIO 5, GND → GND)
-2. Build LDR voltage divider (3.3V → LDR → GPIO 34, GPIO 34 → 10kΩ → GND)
-3. Place 2 LEDs with 220Ω resistors
-4. Verify all connections
+### Step 2: Turn on your phone hotspot (2 min)
+- **iPhone:** Settings → Personal Hotspot → on. Enable "Maximize Compatibility" (forces 2.4 GHz). Keep this screen open while pairing the ESP32.
+- **Android:** Settings → Network → Hotspot. Set band to "2.4 GHz".
 
-### Step 2: Configure WiFi (5 min)
-
-Open [code-web-dashboard.ino](code-web-dashboard.ino) and update:
+### Step 3: Configure the sketch (3 min)
+Open [code-web-dashboard.ino](code-web-dashboard.ino) and paste your hotspot's SSID and password:
 
 ```cpp
-const char* ssid = "YOUR_NETWORK_NAME";
-const char* password = "YOUR_PASSWORD";
+const char* ssid     = "YOUR_PHONE_HOTSPOT_NAME";
+const char* password = "YOUR_HOTSPOT_PASSWORD";
 ```
 
-### Step 3: Upload Code (3 min)
+Both are case-sensitive.
 
-1. Install DHT library (if not already installed)
-2. Upload code to ESP32
-3. Open Serial Monitor (9600 baud)
-4. Note the IP address printed
+### Step 4: Upload and connect (5 min)
+1. Make sure the DHT library is installed.
+2. Upload the sketch.
+3. Open Serial Monitor at 9600 baud.
+4. Note the IP address printed after `Connected!`.
 
-### Step 4: Access Dashboard (2 min)
-
-1. Open any browser on the same WiFi network
-2. Go to `http://YOUR_ESP32_IP`
-3. Explore the interactive dashboard!
+### Step 5: Open the dashboard (1 min)
+On the **same phone** running the hotspot, browse to that IP. You'll see the dashboard with sensor cards and LED toggle buttons. Tap the LED buttons - the physical LEDs should change state on the breadboard.
 
 ---
 
 ## Dashboard Features
 
-### Sensor Display
-- Temperature in Celsius and Fahrenheit
-- Humidity percentage with status indicator
-- Light level with descriptive label (Dark / Dim / Bright)
-
-### LED Control
-- Toggle red and green LEDs from the web page
-- Buttons show current LED state
-- Instant feedback
-
-### JSON API
-- `GET /api/data` — returns all sensor readings and LED states as JSON
-- Use this to build your own apps or log data
-
-### Design
-- Modern card-based UI with gradient background
-- Mobile-friendly responsive layout
-- Real-time updates every 3 seconds
-- Status indicator showing live connection
+- Temperature (Celsius and Fahrenheit)
+- Humidity (with comfort label)
+- Light (raw value plus a visual progress bar)
+- LED toggle buttons (state syncs across browser refreshes)
+- JSON API at `/api/data` for everything readable
+- POST `/api/led` for LED control
+- Real-time refresh every 3 seconds
 
 ---
 
 ## Code Overview
 
-The code creates a web server with multiple routes:
-- `/` — Serves the HTML dashboard with embedded CSS and JavaScript
-- `/api/data` — Returns JSON with sensor readings and LED states
-- `/api/led` — Accepts POST requests to toggle LEDs
+The code defines three routes:
+- `GET /` - the HTML dashboard, with embedded CSS and JS.
+- `GET /api/data` - JSON with sensor readings and LED states.
+- `POST /api/led` - flips the requested LED.
 
-JavaScript on the page calls `/api/data` every 3 seconds to update readings and calls `/api/led` when you click the toggle buttons.
+The page polls `/api/data` every 3 seconds and replaces the values in-place. LED toggle buttons POST to `/api/led` with a small body and re-render on response.
 
 ---
 
-## Customization Ideas
+## Stretch Goals (with acceptance criteria)
 
 ### Beginner
-- Change the color scheme (search for CSS gradient colors)
-- Add more sensor cards
-- Change the update interval (currently 3 seconds)
-- Change LED pin assignments
+- **Recolor the page.** Replace the gradient (search for the CSS background). *Done when:* the page looks visually different.
+- **Add a third LED card** for the blue LED on, say, GPIO 27. *Done when:* the new button toggles a real LED.
+- **Change update interval** to 1 second. *Done when:* values tick once a second in the browser.
 
 ### Intermediate
-- Add historical data charts using Chart.js
-- Store min/max values and display them
-- Add temperature threshold alerts
-- Add a buzzer control button
+- **Min/max tracking.** Maintain min/max of temperature and humidity since boot, expose in JSON, render on the page. *Done when:* min stops dropping and max stops climbing as you breathe on the sensor.
+- **`/api/csv`.** Add a route returning all current values as one CSV line. *Done when:* `curl http://<esp-ip>/api/csv` returns a CSV row.
+- **Threshold alert.** Color the temperature card red when temperature > 28°C. *Done when:* warming the sensor flips the color.
 
 ### Advanced
-- Log data to SPIFFS (ESP32 flash storage)
-- Add authentication (username/password)
-- Push data to a cloud service (ThingSpeak, Firebase)
-- Add multiple pages (settings, history, about)
+- **History sparkline.** Keep last 60 readings in a ring buffer. Add an inline-SVG sparkline. *Done when:* recent ups and downs appear in the chart.
+- **Auth.** Add HTTP Basic auth using `server.authenticate(...)`. *Done when:* visiting the page prompts for credentials.
+- **Cloud forwarding.** POST a JSON snapshot to webhook.site once per minute. *Done when:* you see the data on the webhook capture page.
 
 ---
 
 ## Troubleshooting
 
-See [troubleshooting.md](../troubleshooting.md) for common issues.
+### Page loads but values show `--`
+- Hit `/api/data` directly in the browser - if it returns NaNs, the DHT11 isn't responding (loose data wire, library missing, wrong sensor type).
+- If `/api/data` is fine but the page values stay `--`, look at the browser console (long-press address bar → "Inspect" or use desktop browser).
 
-**Dashboard-specific issues:**
-- **Page loads but shows '--' for values:** Check `/api/data` endpoint directly — visit `http://ESP32_IP/api/data` in your browser
-- **LED buttons don't work:** Check browser console (F12) for JavaScript errors
-- **Slow updates:** Reduce sensor read interval or increase JavaScript poll interval
-- **ESP32 crashes:** The HTML is large — make sure you're using ESP32 (not ESP8266)
+### LED buttons don't toggle the physical LED
+- Check the LED resistor isn't shorted; the LEDs aren't reversed (long leg = anode = the GPIO side).
+- Check the browser console for failed `POST /api/led` requests.
+
+### Connecting to WiFi never finishes
+- Hotspot is 5 GHz - force 2.4 GHz (iPhone "Maximize Compatibility", Android band setting).
+- iPhone hotspot went to sleep - keep the Personal Hotspot screen open.
+- SSID/password typo - both are case-sensitive.
+
+For more, see the [Workshop 3 troubleshooting guide](../troubleshooting.md).
 
 ---
 

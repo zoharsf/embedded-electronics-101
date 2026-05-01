@@ -5,15 +5,32 @@ Reads CSV data from serial port and displays live graphs
 """
 
 import serial
+import serial.tools.list_ports
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from collections import deque
 import sys
 
 # ===== CONFIGURATION =====
-SERIAL_PORT = '/dev/cu.usbserial-XXX'  # CHANGE THIS to your ESP32 port
+# Set this to a specific port to skip auto-detect, e.g. '/dev/cu.usbserial-0001'
+# or 'COM4'. Leave as None to auto-detect.
+SERIAL_PORT = None
 BAUD_RATE = 9600
-MAX_DATA_POINTS = 100  # Number of points to display on graph
+MAX_DATA_POINTS = 100
+
+# Common USB-serial chips on ESP32 dev boards. We match these in port descriptions.
+ESP32_HINTS = ('CP210', 'CP2102', 'CH340', 'CH9102', 'usbserial', 'wchusbserial', 'SLAB')
+
+
+def find_esp32_port():
+    """Return the first port that looks like an ESP32, or None."""
+    candidates = list(serial.tools.list_ports.comports())
+    for port in candidates:
+        text = ' '.join(filter(None, [port.device, port.description, port.manufacturer or '', port.hwid or '']))
+        if any(hint.lower() in text.lower() for hint in ESP32_HINTS):
+            return port.device
+    return None
+
 
 # ===== DATA STORAGE =====
 timestamps = deque(maxlen=MAX_DATA_POINTS)
@@ -22,20 +39,27 @@ humidities = deque(maxlen=MAX_DATA_POINTS)
 light_levels = deque(maxlen=MAX_DATA_POINTS)
 
 # ===== SERIAL CONNECTION =====
+port_to_open = SERIAL_PORT or find_esp32_port()
+if port_to_open is None:
+    print("Could not auto-detect an ESP32 serial port.")
+    print("Available ports:")
+    for p in serial.tools.list_ports.comports():
+        print(f"  {p.device}  -  {p.description}")
+    print("\nFix: edit SERIAL_PORT at the top of dashboard.py to one of the above,")
+    print("or close Arduino Serial Monitor (it holds the port exclusively) and re-run.")
+    sys.exit(1)
+
 try:
-    ser = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=1)
-    print(f"Connected to {SERIAL_PORT}")
+    ser = serial.Serial(port_to_open, BAUD_RATE, timeout=1)
+    print(f"Connected to {port_to_open}")
     print("Waiting for data...\n")
 except Exception as e:
-    print(f"Error: Could not open serial port {SERIAL_PORT}")
+    print(f"Error: could not open serial port {port_to_open}")
     print(f"Details: {e}")
     print("\nTroubleshooting:")
-    print("1. Check ESP32 is plugged in")
-    print("2. Close Arduino Serial Monitor")
-    print("3. Find correct port:")
-    print("   macOS: ls /dev/cu.*")
-    print("   Linux: ls /dev/ttyUSB*")
-    print("   Windows: Check Device Manager")
+    print("1. Is the ESP32 plugged in?")
+    print("2. Close Arduino Serial Monitor (it holds the port exclusively).")
+    print("3. List available ports: python3 -m serial.tools.list_ports -v")
     sys.exit(1)
 
 # Skip the header line and startup messages
