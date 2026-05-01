@@ -1,0 +1,145 @@
+/* Embedded Electronics 101 - visual polish */
+
+/* Slightly tighter content width for long-form readability */
+.md-grid {
+  max-width: 1320px;
+}
+
+/* Larger code blocks, easier to read on phones */
+.md-typeset code,
+.md-typeset pre > code {
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+/* Punchier h1/h2 with thin underline accent */
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.md-typeset h2 {
+  font-weight: 650;
+  margin-top: 2.4rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+/* Make tables breathe a little */
+.md-typeset table:not([class]) {
+  font-size: 0.8rem;
+}
+.md-typeset table:not([class]) th {
+  background: var(--md-primary-fg-color--light);
+  color: var(--md-primary-bg-color);
+}
+
+/* Admonitions: thicker accent stripe, softer background */
+.md-typeset .admonition,
+.md-typeset details {
+  border-left-width: 4px;
+  border-radius: 8px;
+}
+
+/* Custom hero block on the homepage */
+.hero {
+  padding: 2.4rem 1.6rem 2rem;
+  margin: 0 -1rem 2rem;
+  background: linear-gradient(135deg,
+    var(--md-primary-fg-color) 0%,
+    var(--md-accent-fg-color) 100%);
+  color: var(--md-primary-bg-color);
+  border-radius: 14px;
+  text-align: center;
+}
+.hero h1 {
+  margin: 0 0 0.4rem;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--md-primary-bg-color);
+}
+.hero p {
+  margin: 0 auto;
+  max-width: 42rem;
+  font-size: 1.05rem;
+  opacity: 0.95;
+}
+.hero .hero-cta {
+  display: inline-flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1.2rem;
+}
+.hero .md-button {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--md-primary-fg-color);
+  font-weight: 600;
+  border: none;
+}
+.hero .md-button:hover {
+  background: white;
+  color: var(--md-primary-fg-color);
+  transform: translateY(-1px);
+  transition: all 0.15s ease;
+}
+
+/* Workshop card grid on the homepage */
+.workshop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin: 1.2rem 0;
+}
+.workshop-card {
+  display: block;
+  padding: 1rem 1.1rem;
+  border-radius: 10px;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+.workshop-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--md-accent-fg-color);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+.workshop-card .step {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--md-accent-fg-color);
+  margin-bottom: 0.35rem;
+}
+.workshop-card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+}
+.workshop-card p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--md-default-fg-color--light);
+  line-height: 1.5;
+}
+
+/* Mobile tweaks */
+@media (max-width: 600px) {
+  .hero {
+    padding: 1.8rem 1rem 1.4rem;
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  .md-typeset table:not([class]) {
+    font-size: 0.75rem;
+  }
+}
+
+/* Print: hide nav and toc, leave content tidy */
+@media print {
+  .md-header, .md-tabs, .md-sidebar { display: none; }
+  .md-main__inner { margin: 0; }
+}
