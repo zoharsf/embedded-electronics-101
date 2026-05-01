@@ -39,3 +39,7 @@ Thumbs.db
 
 # MkDocs cache
 .cache/
+
+# Local Claude config and graph output
+CLAUDE.md
+graphify-out/
