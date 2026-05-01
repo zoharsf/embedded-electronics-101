@@ -56,14 +56,11 @@ theme:
     - content.code.copy
     - content.code.annotate
     - content.tabs.link
-    - content.action.edit
     - announce.dismiss
   icon:
     repo: fontawesome/brands/github
-    edit: material/pencil
-    view: material/eye
   favicon: stylesheets/favicon.svg
-  logo: stylesheets/logo.svg
+  logo: material/developer-board
 
 # Custom CSS for visual polish.
 extra_css:
