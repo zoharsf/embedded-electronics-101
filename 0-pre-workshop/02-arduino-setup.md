@@ -17,47 +17,30 @@ After watching, come back and follow the step-by-step guide below.
 
 ## Step 1: Create Arduino Account (2 min)
 
-1. Go to **[https://create.arduino.cc/](https://create.arduino.cc/)**
+1. Go to **[https://app.arduino.cc/](https://app.arduino.cc/)**
 2. Click **"Sign Up"** (or "Log In" if you already have an account)
 3. Enter your email and create a password
 4. **Verify your email** (check your inbox and spam folder)
 
 ✅ Done! You now have an Arduino account.
 
-## Step 2: Install ESP32 Board Support (5 min)
+## Step 2: Create a Sketch and Select Your ESP32 Board (3 min)
 
-1. In Arduino Create, click **Preferences** (⚙️ icon, top right)
-2. Find "Additional Boards Manager URLs" field
-3. **Paste this entire link:**
-   ```
-   https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
-   ```
-4. Click **Save**
-5. Go to **Boards Manager** (left sidebar, second icon)
+1. Log in at **[app.arduino.cc](https://app.arduino.cc)**
+2. Click **"Create New"** (top right) → choose **"Sketch"**
+3. In the editor, click **"Select Device"**
+4. Choose your **port** (the USB port your ESP32 is plugged into)
+5. Click **"Select Device Type"**
 6. Search for **"ESP32"**
-7. Find **"esp32 by Espressif Systems"**
-8. Click **Install**
-9. Wait 1-2 minutes for download
-10. When done, you should see "INSTALLED" next to it
+7. Choose **"ESP32 Dev Module"**
 
-✅ Done! ESP32 is now ready to use.
+✅ Done! Your sketch is linked to the ESP32.
 
 ---
 
-## Step 3: Select Your Board (1 min)
+## Step 3: Quick Test (Optional, 2 min)
 
-1. Click **"Select Board"** (top left)
-2. Search for **"ESP32"**
-3. Choose **"ESP32 Dev Module"**
-4. Close the popup
-
-✅ Done! Board is selected.
-
----
-
-## Step 4: Quick Test (Optional, 2 min)
-
-1. Go to **File → Examples → 01.Basics → Blink**
+1. Click the **Examples** icon in the left sidebar → **01.Basics** → **Blink**
 2. You should see code appear
 3. Click **Verify** (✓ checkmark icon, top left)
 4. Look at the bottom—should say "Compilation successful" ✅
