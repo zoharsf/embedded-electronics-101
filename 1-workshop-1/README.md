@@ -14,6 +14,7 @@ By the end of this workshop, you will:
 **A button-controlled LED circuit:**
 - Push the button → LED lights up
 - Release the button → LED turns off
+- (Bonus) Toggle mode → one press latches the LED on, the next press turns it off
 - (Bonus) Hold button 2+ seconds → LED blinks
 
 ## 📅 Workshop Timeline
@@ -43,6 +44,7 @@ Complete kit with everything you need:
 - [Circuit Diagram & How to Build](./circuit-diagram.md)
 - [Code: Basic LED Blink](./code-led-blink.ino) (warm-up)
 - [Code: LED + Button (main project)](./code-led-button.ino)
+- [Code: LED Toggle (bonus build)](./code-led-button-toggle.ino)
 - [Troubleshooting Guide](./troubleshooting.md)
 
 ## 🚀 Stretch Goals (if you finish early)

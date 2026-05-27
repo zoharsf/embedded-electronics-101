@@ -60,7 +60,10 @@ theme:
   icon:
     repo: fontawesome/brands/github
   favicon: stylesheets/favicon.svg
-  logo: material/developer-board
+  # `logo` expects an image file path. The previous value `material/developer-board`
+  # was an icon name, which Material renders as <img src="material/developer-board">
+  # - a broken image in the header. Use the bundled SVG logo instead.
+  logo: stylesheets/logo.svg
 
 # Custom CSS for visual polish.
 extra_css:
